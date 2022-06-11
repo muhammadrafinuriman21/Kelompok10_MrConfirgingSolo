@@ -1,13 +1,6 @@
 firstname,lastname,contactno,email,selectsecurityquestion,securityanswer,password
-admin,admin
-user1,pasw1
-user2,pasw2
-rafi,rafi
-rafi@123,rafi
-,,,,Select,,
-,,,,Select,,
-,,,,Select,,
-,,,,Select,,
-Rafi,Aja,081,rafi@123,Your Pet Name,Debu,123
-Akhdan,Jago,123,akhdan@123,Your Pet Name,Debu,abc123
-Caesar,Aja,0823,caesar@gmail.com,Your Pet Name,Debu,abc123
+a,a,1,a,Your Pet Name,Lalu,a
+Muhammad Rafi,Nur Iman,+6282317459326,muhammadrafinuriman@123,Your Pet Name,rafiggwp,rafi123
+Kelompok,10,121212112112,kelompok10@123,Your Pet Name,debu,abc123
+
+

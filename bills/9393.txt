@@ -1,0 +1,26 @@
+	 ~ WELCOME TO MR.CONFORGING SOLO ~
+
+ Bill Number			: 9393
+ Customer Ref			: 9225
+ Customer Name			: Muhammad Rafi Nur Iman
+ Gender			: Male
+ PostCode			: 45573
+ Mobil No.			: 6282317459326
+ Email			: rafi@123
+ Provincial Origin			: Jawa Barat
+ ID Proof Type			: KTP
+ ID Number			: 12345678910
+ Address			: Moskow
+==================================================			 "SOLO PARAGON HOTEL & RESIDENCES"
+
+  Room Type			Quantity		Room Price
+================================================== Luxury Room		8		16000000
+ Luxury Room		8		16000000
+ Double Room		1		1000000
+ Single Room		12		6000000
+
+==================================================
+ Sub Amount:			Rp.39000000.00
+ Tax Amount:			Rp.385000.00
+ Total Amount:			Rp.39385000.00
+==================================================

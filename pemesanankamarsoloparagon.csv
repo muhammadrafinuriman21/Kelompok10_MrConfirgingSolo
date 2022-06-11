@@ -1,0 +1,5 @@
+Bill Number,Cust Ref, Cust Name, Cust Gender, Cust PostCode, Cust Mobile, Cust Email, Cust Provinsi, Cust ID Type, Cust ID Number, Cust Address, Room Type, Room Price, Quantity Room, No of Days, Total Harga Kamar, Check-In, Early Check-In, Late Check-Out, Meal, Payment Method, Online Pay Method, Payment Code
+7559,2283,Rafi,Male,45573,+6282317459326,rafi@123,Jawa Barat,Jawa Barat,Saint Petersburg,"['Single Room', 'Luxury Room', 'Double Room']","[500000, 2000000, 1000000]","[2, 3, 1]","[5, 2, 2]","[5000000, 12000000, 2000000]",21 Desember 2023,09.00 WIB,18.00 WIB,Lunch,Non-Cash,Credit Card,3334714556
+5680,9389,,,,+62,,,,,[],[],[],[],[],,Select Time,,,,,1619726980
+2344,7984,,,,+62,,,,,[],[],[],[],[],,Select Time,,,,,1070200009
+2130,8640,Zamzut,Male,313131,+6283131313131,rafi@123,Sumatera Selatan,Sumatera Selatan,sasaaasasasas,"['Double Room', 'Double Room', 'Double Room', 'Double Room', 'Double Room']","[1000000, 1000000, 1000000, 1000000, 1000000]","[1, 1, 1, 1, 1]","[1, 1, 1, 1, 1]","[1000000, 1000000, 1000000, 1000000, 1000000]",21 Maret 2023,09.00 WIB,18.00 WIB,Breakfast,Non-Cash,Credit Card,9267177078

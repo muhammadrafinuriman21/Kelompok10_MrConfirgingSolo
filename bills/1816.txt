@@ -1,0 +1,36 @@
+	 ~ WELCOME TO MR.CONFORGING SOLO ~
+
+ Bill Number			: 1816
+ Customer Ref			: 6088
+ Customer Name			: Mirza
+ Gender			: Male
+ PostCode			: 45573
+ Mobil No.			: 62921212
+ Email			: mirza@123
+ Provincial Origin			: Jawa Tengah
+ ID Proof Type			: KTP
+ ID Number			: 2121221221212
+ Address			: Solo
+==================================================			 "SOLO PARAGON HOTEL & RESIDENCES"
+
+  Jl. Dr. Sutomo, Mangkubumen, Kec. Banjarsari, Kota Surakarta
+
+  Room Type		Quantity	          No of Days		        Room Price
+================================================== Luxury Room		8	          1		        16000000
+ Double Room		1	          2		        2000000
+==================================================
+ ~ ADDITIONAL INFORMATION ~
+
+ Check-In Date			: 21 Desember 2023
+ Earliest Check-In Date			: 09.00 WIB
+ Late Check-Out			: 18.00 WIB
+ Meal			: Breakfast
+ Payment Method			: Non-Cash
+ Online Payment Method			: Credit Card
+==================================================
+ Transfer to rek. number 2168329 a.n. CV Conforging
+ Payment Code			: 5950033043
+ Sub Amount			: Rp.18000000.00
+ Tax Amount			: Rp.170000.00
+ Total Amount			: Rp.18170000.00
+==================================================
