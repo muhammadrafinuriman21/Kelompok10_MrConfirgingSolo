@@ -16,7 +16,7 @@ def main():                                             # Mendefinisikan Fungsi 
     win.mainloop()                                      # Untuk memanggil mainloop Tkinter dan programnya melakukan looping (terus memproses) agar window tidka langsung menutup saat dipanggil
 
 
-class Login_Window:                                     # Membuat class berisi gabungan dari beberapa fungsi untuk user melakukan login 
+class Login_Window:                                     # Membuat class berisi gabungan dari beberapa fungsi untuk user melakukan login. 
     def __init__(self, root):                           # Mendefinisikan fungsi dalam class dengan nama __init__ dengan parameternya harus "self" (merujuk pada objek class) dan ada parameter tambahan yaitu "root"
                                                             # Fungsi parameter self : untuk merepresentasikan setiap objek yang dibuat pada class yang memiliki atribut yang berbeda-beda dalam class yang sama
         self.root=root                                  # Membuat properti root dengan sintaks self.root dan memberikan nilai dari root
