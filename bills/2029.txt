@@ -1,0 +1,35 @@
+	 ~ WELCOME TO MR.CONFORGING SOLO ~
+
+ Bill Number			: 2029
+ Customer Ref			: 9441
+ Customer Name			: Kelompok 10
+ Gender			: Other
+ PostCode			: 212121
+ Mobil No.			: 6282317459326
+ Email			: kelompok10@123
+ Provincial Origin			: Jawa Tengah
+ ID Proof Type			: KTP
+ ID Number			: 123456789
+ Address			: Solo
+==================================================			 "ASTON SOLO HOTEL"
+
+  Jl. Slamet Riyadi No.373, Sondakan, Kec. Laweyan, Kota Surakarta
+
+  Room Type		Quantity	          No of Days		        Room Price
+================================================== Superior Twin		1	          1		        553719
+ Superior Twin		1	          1		        553719
+ Superior Twin		1	          1		        553719
+==================================================
+ ~ ADDITIONAL INFORMATION ~
+
+ Check-In Date			: 21 Maret 2023
+ Earliest Check-In Date			: 09.00 WIB
+ Late Check-Out			: 18.00 WIB
+ Meal			: Breakfast
+ Payment Method			: Non-Cash
+ Online Payment Method			: Gopay
+==================================================
+ Sub Amount			: Rp.1661157.00
+ Tax Amount			: Rp.11074.38
+ Total Amount			: Rp.1672231.38
+==================================================
