@@ -1,0 +1,42 @@
+	 ~ WELCOME TO MR.CONFORGING SOLO ~
+
+ Bill Number			: 9614
+ Customer Ref			: 9614
+ Customer Name			: sasasa
+ Gender			: Male
+ PostCode			: 212122121
+ Mobil No.			: 62221
+ Email			: sasa
+ Provincial Origin			: Maluku
+ ID Proof Type			: SIM
+ ID Number			: 2112121
+ Address			: sasaasas
+==================================================			 "SOLO PARAGON HOTEL & RESIDENCES"
+
+  Jl. Dr. Sutomo, Mangkubumen, Kec. Banjarsari, Kota Surakarta
+
+  Room Type		Quantity	          No of Days		        Room Price
+================================================== Deluxe Room		1	          1		        558178
+ Suite 2 Bedrooms		2	          3		        6550188
+==================================================
+ ~ ADDITIONAL INFORMATION ~
+
+ Check-In Date			: 211212
+ Earliest Check-In Date			: 09.00 WIB
+ Late Check-Out			: 15.00 WIB
+==================================================
+ ~ ADDITIONAL INFORMATION ~
+
+ Check-In Date			: 211212
+ Earliest Check-In Date			: 09.00 WIB
+ Late Check-Out			: 15.00 WIB
+ Meal			: Breakfast
+ Payment Method			: Non-Cash
+ Online Payment Method			: Debit Card
+==================================================
+ Transfer to rek. number 2168329 a.n. CV Conforging
+ Payment Code			: 2205724366
+ Sub Amount			: Rp.9108362.00
+ Tax Amount			: Rp.80166.64
+ Total Amount			: Rp.9188528.64
+==================================================
