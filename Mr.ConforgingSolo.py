@@ -22,7 +22,7 @@ class Login_Window:                                     # Membuat class berisi g
         self.root=root                                  # Membuat properti root dengan sintaks self.root dan memberikan nilai dari root
         self.root.title("MR. CONFORGING SOLO")          # Membuat judul window dengan nama Mr.Conforging  Solo 
         self.root.geometry("1550x800+0+0")              # Membuat ukuran window login panjang 1550 pixel, lebar 800 pixel, bergeser 0 pixel dari sumbu X, bergeser 0 pixel dari sumbu Y 
-
+        
         self.bg=ImageTk.PhotoImage(file=r"images\layarlogin.png")      # Mengisi layar frame dengan foto bernama layarlogin.png
         lbl_bg=Label(self.root,image=self.bg)           # Mengatur posisi foto layarlogin.png 
         lbl_bg.place(x=0,y=0,relwidth=1,relheight=1)    # Dengan koordinat x=0, y=0, relative posisi window dengan lebar 1 dan tinggi 1   
@@ -339,7 +339,7 @@ class HotelManagementSystem:                        # Membuat class berisi gabun
 
 
 
-# Mulai sini Copy jadi 5 hotel
+# SOLO PARAGON HOTEL
 class Bill_App1:                                                                        # Membuat class berisi gabungan dari beberapa fungsi untuk user melakukan pemesanan kamar dan mendapatkan bill di Hotel Solo Paragon
     def __init__(self,root):                                                            # Mendefinisikan fungsi dalam class dengan nama __init__ dengan parameternya harus "self" (merujuk pada objek class) dan ada parameter tambahan yaitu "root"
         self.root=root                                                                  # Membuat properti root dengan sintaks self.root dan memberikan nilai dari root
@@ -785,7 +785,7 @@ class Bill_App1:                                                                
                 'Cust Mobile' : [self.txtCustMob.get()],
                 'Cust Email' : [self.txtCustEmail.get()],
                 'Cust Provinsi' : [self.comboCustProvinsi.get()],
-                'Cust ID Type' : [self.comboCustProvinsi.get()],
+                'Cust ID Type' : [self.var_id_type.get()],
                 'Cust Address' : [self.txtCustAddress.get()],
                 'Room Type' : [datakamar],
                 'Room Price' : [hargahargakamardipesan],
@@ -1396,7 +1396,7 @@ class Bill_App2:                                                                
                 'Cust Mobile' : [self.txtCustMob.get()],
                 'Cust Email' : [self.txtCustEmail.get()],
                 'Cust Provinsi' : [self.comboCustProvinsi.get()],
-                'Cust ID Type' : [self.comboCustProvinsi.get()],
+                'Cust ID Type' : [self.var_id_type.get()],
                 'Cust Address' : [self.txtCustAddress.get()],
                 'Room Type' : [datakamar],
                 'Room Price' : [hargahargakamardipesan],
@@ -2015,7 +2015,7 @@ class Bill_App3:                                                                
                 'Cust Mobile' : [self.txtCustMob.get()],
                 'Cust Email' : [self.txtCustEmail.get()],
                 'Cust Provinsi' : [self.comboCustProvinsi.get()],
-                'Cust ID Type' : [self.comboCustProvinsi.get()],
+                'Cust ID Type' : [self.var_id_type.get()],
                 'Cust Address' : [self.txtCustAddress.get()],
                 'Room Type' : [datakamar],
                 'Room Price' : [hargahargakamardipesan],
@@ -2626,7 +2626,7 @@ class Bill_App4:                                                                
                 'Cust Mobile' : [self.txtCustMob.get()],
                 'Cust Email' : [self.txtCustEmail.get()],
                 'Cust Provinsi' : [self.comboCustProvinsi.get()],
-                'Cust ID Type' : [self.comboCustProvinsi.get()],
+                'Cust ID Type' : [self.var_id_type.get()],
                 'Cust Address' : [self.txtCustAddress.get()],
                 'Room Type' : [datakamar],
                 'Room Price' : [hargahargakamardipesan],
@@ -3246,7 +3246,7 @@ class Bill_App5:                                                                
                 'Cust Mobile' : [self.txtCustMob.get()],
                 'Cust Email' : [self.txtCustEmail.get()],
                 'Cust Provinsi' : [self.comboCustProvinsi.get()],
-                'Cust ID Type' : [self.comboCustProvinsi.get()],
+                'Cust ID Type' : [self.var_id_type.get()],
                 'Cust Address' : [self.txtCustAddress.get()],
                 'Room Type' : [datakamar],
                 'Room Price' : [hargahargakamardipesan],
