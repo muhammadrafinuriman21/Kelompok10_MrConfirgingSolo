@@ -1,0 +1,35 @@
+	 ~ WELCOME TO MR.CONFORGING SOLO ~
+
+ Bill Number			: 6982
+ Customer Ref			: 4151
+ Customer Name			: Micco Fernando
+ Gender			: Male
+ PostCode			: 59346
+ Mobil No.			: 6285156870171
+ Email			: micco@gmail.com
+ Provincial Origin			: Jawa Tengah
+ ID Proof Type			: KTP
+ ID Number			: 33190328080003
+ Address			: Dieng
+==================================================			 "SOLO PARAGON HOTEL & RESIDENCES"
+
+  Jl. Dr. Sutomo, Mangkubumen, Kec. Banjarsari, Kota Surakarta
+
+  Room Type		Quantity	          No of Days		        Room Price
+================================================== Suite 2 Bedrooms		7	          100		        764188600
+ Suite 2 Bedrooms		7	          100		        764188600
+ Suite 2 Bedrooms		7	          100		        764188600
+ Suite 2 Bedrooms		7	          100		        764188600
+==================================================
+ ~ ADDITIONAL INFORMATION ~
+
+ Check-In Date			: 15 Juni 2022
+ Earliest Check-In Date			: 09.00 WIB
+ Late Check-Out			: 18.00 WIB
+ Meal			: Dinner
+ Payment Method			: Cash
+==================================================
+ Sub Amount			: Rp.3056754400.00
+ Tax Amount			: Rp.30556627.02
+ Total Amount			: Rp.3087311027.02
+==================================================

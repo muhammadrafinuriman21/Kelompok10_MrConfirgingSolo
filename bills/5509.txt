@@ -1,0 +1,32 @@
+	 ~ WELCOME TO MR.CONFORGING SOLO ~
+
+ Bill Number			: 5509
+ Customer Ref			: 4614
+ Customer Name			: Rafi
+ Gender			: Female
+ PostCode			: 5411
+ Mobil No.			: 6285904263
+ Email			: rafinur@gmail.com
+ Provincial Origin			: Sumatera Barat
+ ID Proof Type			: SIM
+ ID Number			: 0426
+ Address			: Nurul Huda 15
+==================================================			 "NOVOTEL SOLO HOTEL"
+
+  Jl. Slamet Riyadi No. 272, Kec. Banjarsari, Kota Surakarta, 57131 
+
+  Room Type		Quantity	          No of Days		        Room Price
+================================================== Superior Twin Room		9	          22		        93258000
+==================================================
+ ~ ADDITIONAL INFORMATION ~
+
+ Check-In Date			: 15 Juni 2022
+ Earliest Check-In Date			: 09.00 WIB
+ Late Check-Out			: 18.00 WIB
+ Meal			: Dinner
+ Payment Method			: Cash
+==================================================
+ Sub Amount			: Rp.93258000.00
+ Tax Amount			: Rp.927870.00
+ Total Amount			: Rp.94185870.00
+==================================================

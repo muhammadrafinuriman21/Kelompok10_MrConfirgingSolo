@@ -1,0 +1,33 @@
+	 ~ WELCOME TO SWISSBELL HOTEL ~
+
+ Bill Number			: 1452
+ Customer Ref			: 6003
+ Customer Name			: Kyaaaa
+ Gender			: Male
+ PostCode			: 51688
+ Mobil No.			: 62042587191
+ Email			: kyaaaa@gmail.com
+ Provincial Origin			: Sumatera Utara
+ ID Proof Type			: KTP
+ ID Number			: 15711
+ Address			: UNS bagian belakang
+==================================================			 "SWISSBELL HOTEL"
+
+  Jl. A. Yani No.45, Gilingan, Kec. Banjarsari, Kota Surakarta
+
+  Room Type		Quantity	          No of Days		        Room Price
+================================================== Deluxe King		1	          7		        3950632
+ Deluxe King		1	          7		        3950632
+==================================================
+ ~ ADDITIONAL INFORMATION ~
+
+ Check-In Date			: 15 Juni 2022
+ Earliest Check-In Date			: 13.00 WIB
+ Late Check-Out			: 18.00 WIB
+ Meal			: Dinner
+ Payment Method			: Cash
+==================================================
+ Sub Amount			: Rp.7901264.00
+ Tax Amount			: Rp.73368.88
+ Total Amount			: Rp.7974632.88
+==================================================
