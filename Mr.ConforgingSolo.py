@@ -73,8 +73,7 @@ class Login_Window:                                     # Membuat class berisi g
 
          # Register Button                  # Tombol untuk register user
         registerbtn=Button(frame,command=self.register_window,text="New User Register",font=("times neew roman",10,"bold"), borderwidth=0,fg="white",bg="brown",activeforeground="white", activebackground="brown")     # Membuat tombol login user bertuliskan "Register" dengan warna yang disesuaikan
-        registerbtn.place(x=167,y=430,width=160)                # # Mengatur dimensi dan lokasi dari tombol Register pada frame login
-    
+        registerbtn.place(x=167,y=430,width=160)                # Mengatur dimensi dan lokasi dari tombol Register pada frame login
 
 
     def register_window(self):                          # Membuat fungsi register window yang mana ketika user klik tombol "New User Register" frame register akan menumpuk di atas frame login menggunakan TopLevel setelah membaca class register
@@ -348,7 +347,7 @@ class Bill_App1:                                                                
 
 
         # ================== Variables =======================
-        self.var_ref=StringVar()                            # Membuat variabel var_ref dengan parameternya self dengan jenis datanya String
+        self.var_ref=StringVar()                                # Membuat variabel var_ref dengan parameternya self dengan jenis datanya String
         x=random.randint(1000,9999)                             # Membuat variabel x untuk random angka mulai dari 1000 sampai 9999-1 
         self.var_ref.set(str(x))                                # Melakukan set untuk var_ref agar angka random muncul otomatis
 
@@ -356,7 +355,7 @@ class Bill_App1:                                                                
         self.var_gender=StringVar()                         # Membuat variabel var_gender dengan parameternya self dengan jenis datanya String
         self.var_post=StringVar()                           # Membuat variabel var_post dengan parameternya self dengan jenis datanya String
         self.var_mobile=IntVar()                            # Membuat variabel var_mobile dengan parameternya self dengan jenis datanya Integer
-        self.var_mobile.set("+62" + str())                      # Melakukan set untuk var_mobile agar diawal otomatis terisi "+62"
+        self.var_mobile.set("+62" + str())                  # Melakukan set untuk var_mobile agar diawal otomatis terisi "+62"
 
         self.var_email=StringVar()                          # Membuat variabel var_email dengan parameternya self dengan jenis datanya String
         self.var_provinsi=StringVar()                       # Membuat variabel var_provinsi dengan parameternya self dengan jenis datanya String
@@ -376,8 +375,8 @@ class Bill_App1:                                                                
         self.var_onlinepayment=StringVar()                  # Membuat variabel var_onlinepayment dengan parameternya self dengan jenis datanya String
         
         self.bill_no=StringVar()                            # Membuat variabel bill_no dengan parameternya self dengan jenis datanya String
-        z=random.randint(1000,9999)                             # Membuat variabel z untuk random angka mulai dari 1000 sampai 9999-1
-        self.bill_no.set(z)                                     # Melakukan set untuk var_ref agar angka random muncul otomatis
+        z=random.randint(1000,9999)                         # Membuat variabel z untuk random angka mulai dari 1000 sampai 9999-1
+        self.bill_no.set(z)                                 # Melakukan set untuk var_ref agar angka random muncul otomatis
 
         self.search_bill=StringVar()                        # Membuat variabel search_bill dengan parameternya self dengan jenis datanya String               
         self.sub_total=StringVar()                          # Membuat variabel sub_total dengan parameternya self dengan jenis datanya String
@@ -386,8 +385,8 @@ class Bill_App1:                                                                
 
         # Var Code Pembayaran
         self.var_codebayartunai=StringVar()                                         # Membuat variabel var_codebayartunai dengan parameternya self dengan jenis datanya String
-        u=random.randint(1000000000,9999999999)                                         # Membuat variabel u untuk random angka mulai dari 1000000000 sampai 9999999999-1
-        self.var_codebayartunai.set(u)                                                  # Melakukan set untuk var_codebayartunai agar angka random muncul otomatis
+        u=random.randint(1000000000,9999999999)                                     # Membuat variabel u untuk random angka mulai dari 1000000000 sampai 9999999999-1
+        self.var_codebayartunai.set(u)                                              # Melakukan set untuk var_codebayartunai agar angka random muncul otomatis
 
         # Reservation Room Type List
         self.RoomType=["Select Type","Suite 2 Bedrooms","Deluxe Room","Superior Room","Executive Room"]     # Membuat data list RoomType dengan parameter self
@@ -450,7 +449,7 @@ class Bill_App1:                                                                
 
         # Membuat label tulisan Nama Hotel
         lbl_title=Label(self.root,text="SOLO PARAGON HOTEL & RESIDENCES",font=("times new roman",35,"bold"),bg="brown",fg="white")  # Membuat label bertuliskan Nama Hotel dengan font dan format yang disesuaikan
-        lbl_title.place(x=0,y=130,width=1550,height=45)                                                     # Mengatur posisi label dengan koordinat yang disesuaikan
+        lbl_title.place(x=0,y=130,width=1550,height=45)                                                 # Mengatur posisi label dengan koordinat yang disesuaikan
         
         def time():                                 # Membuat fungsi time untuk waktu terkini
             string=strftime('%H:%M:%S %p')          # Membuat variabel bernama string yang bernilai fungsi strtime dengan value Jam,Menit,Detik,Am/Pm
@@ -482,9 +481,9 @@ class Bill_App1:                                                                
         self.lblCustGender=Label(Cust_Frame,text="Gender",font=("arial",12,"bold"),bg="white",fg="brown",bd=4)          # Membuat label tulisan Gender dengan format dan warna tulisan yang disesuaikan
         self.lblCustGender.grid(row=2,column=0,sticky=W,padx=5,pady=2)                                                  # Mengatur grid/posisi tulisan baris dan kolomnya
         self.comboCustGender=ttk.Combobox(Cust_Frame,textvariable=self.var_gender,font=("arial",10,"bold"),width=23,state="readonly")   # Membuat Combobox Gender
-        self.comboCustGender["value"]=("","Male","Female","Other")                                                                      # Dengan membuat beberapa value
-        self.comboCustGender.current(0)                                                                                                 # Dengan melakukan set saat program jalan otomatis menampilkan index 0
-        self.comboCustGender.grid(row=2,column=1,sticky=W,padx=5,pady=2)                                                                # Mengatur grid/posisi combobox dari baris dan kolomnya
+        self.comboCustGender["value"]=("","Male","Female","Other")                                                      # Dengan membuat beberapa value
+        self.comboCustGender.current(0)                                                                                 # Dengan melakukan set saat program jalan otomatis menampilkan index 0
+        self.comboCustGender.grid(row=2,column=1,sticky=W,padx=5,pady=2)                                                # Mengatur grid/posisi combobox dari baris dan kolomnya
         #Cust PostCode
         self.lblCustPostCode=Label(Cust_Frame,text="PostCode",font=("arial",12,"bold"),bg="white",fg="brown",bd=4)      # Membuat label tulisan PostCode dengan format dan warna tulisan yang disesuaikan 
         self.lblCustPostCode.grid(row=3,column=0,sticky=W,padx=5,pady=2)                                                # Mengatur grid/posisi tulisan baris dan kolomnya
@@ -509,8 +508,8 @@ class Bill_App1:                                                                
                            "Nusa Tenggara Barat","Nusa Tenggara Timur","Kalimantan Barat","Kalimantan Selatan","Kalimantan Tengah",
                            "Kalimantan Timur","Kalimantan Utara","Sulawesi Utara","Sulawesi Tengah","Sulawesi Tenggara","Sulawesi Selatan",
                            "Sulawesi Barat","Maluku","Maluku Utara","Gorontalo","Papua","Papua Barat")
-        self.comboCustProvinsi.current(0)                                                                                                                       # Dengan melakukan set saat program jalan otomatis menampilkan index 0
-        self.comboCustProvinsi.grid(row=6,column=1,sticky=W,padx=5,pady=2)                                                                                      # Mengatur grid/posisi combobox dari baris dan kolomnya
+        self.comboCustProvinsi.current(0)                                                                      # Dengan melakukan set saat program jalan otomatis menampilkan index 0
+        self.comboCustProvinsi.grid(row=6,column=1,sticky=W,padx=5,pady=2)                                     # Mengatur grid/posisi combobox dari baris dan kolomnya
         #Cust Id Type
         self.lblCustIdType=Label(Cust_Frame,text="ID Proof Type",font=("arial",12,"bold"),bg="white",fg="brown",bd=4)                       # Membuat label tulisan ID Proof Type dengan format dan warna tulisan yang disesuaikan
         self.lblCustIdType.grid(row=7,column=0,sticky=W,padx=5,pady=2)                                                                      # Mengatur grid/posisi tulisan baris dan kolomnya
@@ -569,34 +568,34 @@ class Bill_App1:                                                                
         self.ComboEarlyCheckIn.current(0)                                                                                       # Dengan melakukan set daat program dijalankan otomatis memunculkan value index 0 pada combobox 
         self.ComboEarlyCheckIn.grid(row=0,column=3,sticky=W,padx=5,pady=2)                                                      # Mengatur grid/posisi combobox dari baris dan kolomnya
         self.ComboEarlyCheckIn.bind("<<ComboboxSelected>>",self.LateCheckOut_Add)                                               # Mengatur menggunakan method bind agar user dapat memiliki value combobos sesuai keinginan dari pilihan value yang tersedia
-                                                                                                                                    # Dan data Late Check-Out hanya dapat diisi user setelah memilih Early Chech-In
+                                                                                                                                # Dan data Late Check-Out hanya dapat diisi user setelah memilih Early Chech-In
         # Late Check-Out
         self.lblLateCheckOut=Label(Revervation_Frame,text="Late Check-Out",font=("arial",12,"bold"),bg="white",fg="brown",bd=4)                         # Membuat label tulisan Latest Check-Out dengan format dan warna tulisan yang disesuaikan
         self.lblLateCheckOut.grid(row=1,column=2,sticky=W,padx=5,pady=2)                                                                                # Mengatur grid/posisi tulisan baris dan kolomnya
         self.ComboLateCheckOut=ttk.Combobox(Revervation_Frame,textvariable=self.var_latecheckout,font=("arial",10,"bold"),width=19,state="readonly")    # Membuat Combobox pilihan Latest Check-Out 
         self.ComboLateCheckOut.grid(row=1,column=3,sticky=W,padx=5,pady=2)                                                                              # Mengatur grid/posisi combobox dari baris dan kolomnya
         self.ComboLateCheckOut.bind("<<ComboboxSelected>>",self.Meal_Add)                                                                               # Mengatur menggunakan method bind agar user dapat memiliki value combobox sesuai keinginan dari pilihan value yang tersedia
-                                                                                                                                                            # Dan data Meal hanya dapat diisi user setelah memilih Latest Check-Out
+                                                                                                                                                        # Dan data Meal hanya dapat diisi user setelah memilih Latest Check-Out
         # Meal
         self.lblMeal=Label(Revervation_Frame,text="Meal",font=("arial",12,"bold"),bg="white",fg="brown",bd=4)                               # Membuat label tulisan Meal dengan format dan warna tulisan yang disesuaikan
         self.lblMeal.grid(row=2,column=2,sticky=W,padx=5,pady=2)                                                                            # Mengatur grid/posisi tulisan baris dan kolomnya
         self.ComboMeal=ttk.Combobox(Revervation_Frame,textvariable=self.var_meal,font=("arial",10,"bold"),width=19,state="readonly")        # Membuat Combobox pilihan Meal
         self.ComboMeal.grid(row=2,column=3,sticky=W,padx=5,pady=2)                                                                          # Mengatur grid/posisi combobox dari baris dan kolomnya
         self.ComboMeal.bind("<<ComboboxSelected>>",self.PaymentMethod_Add)                                                                  # Mengatur menggunakan method bind agar user dapat memiliki value combobox sesuai keinginan dari pilihan value yang tersedia
-                                                                                                                                                # Dan data Payment Moethod hanya dapat diisi user setelah memilih Meal
+                                                                                                                                            # Dan data Payment Moethod hanya dapat diisi user setelah memilih Meal
         # Payment Method
         self.lblPaymentMethod=Label(Revervation_Frame,text="Payment Method",font=("arial",12,"bold"),bg="white",fg="brown",bd=4)                            # Membuat label tulisan Payment Method dengan format dan warna tulisan yang disesuaikan
         self.lblPaymentMethod.grid(row=3,column=2,sticky=W,padx=5,pady=2)                                                                                   # Mengatur grid/posisi tulisan baris dan kolomnya
         self.ComboPaymentMethod=ttk.Combobox(Revervation_Frame,textvariable=self.var_paymentmethod,font=("arial",10,"bold"),width=19,state="readonly")      # Membuat Combobox pilihan Payment Method
         self.ComboPaymentMethod.grid(row=3,column=3,sticky=W,padx=5,pady=2)                                                                                 # Mengatur grid/posisi combobox dari baris dan kolomnya
         self.ComboPaymentMethod.bind("<<ComboboxSelected>>",self.OnlinePaymentMethod_Add)                                                                   # Mengatur menggunakan method bind agar user dapat memiliki value combobox sesuai keinginan dari pilihan value yang tersedia
-                                                                                                                                                                # Dan data Online Payment Method hanya dapat diisi bila user memilih payment method "Non-Cash"
+                                                                                                                                                            # Dan data Online Payment Method hanya dapat diisi bila user memilih payment method "Non-Cash"
         # Online Pay Method
         self.lblOnlinePaymentMethod=Label(Revervation_Frame,text="Online Pay Method",font=("arial",12,"bold"),bg="white",fg="brown",bd=4)                           # Membuat label tulisan Online Payment Method dengan format dan warna tulisan yang disesuaikan
         self.lblOnlinePaymentMethod.grid(row=4,column=2,sticky=W,padx=5,pady=2)                                                                                     # Mengatur grid/posisi tulisan baris dan kolomnya
         self.ComboOnlinePaymentMethod=ttk.Combobox(Revervation_Frame,textvariable=self.var_onlinepayment,font=("arial",10,"bold"),width=19,state="readonly")        # Membuat Combobox pilihan Payment Method
         self.ComboOnlinePaymentMethod.grid(row=4,column=3,sticky=W,padx=5,pady=2)                                                                                   # Mengatur grid/posisi combobox dari baris dan kolomnya
-                                                                                                                                                                        # Mengatur menggunakan readonly agar user tidak dapat menghapus value combobox sesuai keinginan dari pilihan value yang tersedia
+                                                                                                                                                                    # Mengatur menggunakan readonly agar user tidak dapat menghapus value combobox sesuai keinginan dari pilihan value yang tersedia
         
         # =====================Foto bawah =================================
         MiddleFrame1=Frame(Main_Frame,bd=10)                        # Membuat frame baru untuk foto hiasan dan info tambahan
@@ -711,7 +710,7 @@ class Bill_App1:                                                                
             messagebox.showerror("Error","Please Select The Room Type Name")            # Maka akan muncul notiifikasi error dan meminta untuk memilih tipe kamar
             self.new_window=Toplevel(self.root)                                         # Lalu akan memunculkan layar baru dengan Toplevel
             self.app=Bill_App1(self.new_window)                                         # Membuka kembali window Bill_App1
-        else:                                                                                   # Membuat decision lain (bila user memilih tipe kamar)
+        else:                                                                           # Membuat decision lain (bila user memilih tipe kamar)
             self.textarea.insert(END,f"\n {self.var_roomtype.get()}\t\t{self.var_quantity.get()}\t          {self.var_noofdays.get()}\t\t        {self.o}")     # Menginput dan memunculkan data tipe kamar,jumlah,lama menginap, dan total harga kamar pada frame bill text area
             self.sub_total.set(str('Rp.%.2f'%(sum(self.l))))                                                                    # Menghitung dan memunculkan nilai subtotal setelah dilakukan perhitungan pada frame Bill Counting
             self.tax_input.set(str('Rp.%.2f'%((((sum(self.l)) - (self.var_roomprice.get()))*Tax)/100)))                         # Menghitung dan memunculkan nilai pajak setelah dilakukan perhitungan pada frame Bill Counting
@@ -802,21 +801,21 @@ class Bill_App1:                                                                
             userpemesan = pd.DataFrame(newcustomer)                                                         # Membuat variabel newcustomer yang menghubungkan dengan pandas
             userpemesan.to_csv('pemesanankamarsoloparagon.csv', mode='a', index=False, header=False)        # Memasukkan data ke csv
             
-    def save_bill(self):                                                    # Membuat fungsi save_bill dengan parameter self agar bill dapat disimpan user
+    def save_bill(self):                                                                # Membuat fungsi save_bill dengan parameter self agar bill dapat disimpan user
         if self.var_roomtype.get()=="Select Type":                                      # Membuat decision bila user belum memilih jenis kamar
             messagebox.showerror("Error","Please CLick Generate Bill")                  # Akan Memunculkan notifikasi error
             self.new_window=Toplevel(self.root)                                         # Lalu akan membuka windows baru dengan toplevel
             self.app=Bill_App1(self.new_window)                                         # windownya adalah Bill_App1
         else:
             op=messagebox.askyesno("Save Bill","Do you want to save the Bill?")         # Memunculkan messagebox untuk meminta user memilih ya atau tidak
-            if op:                                                                                    # Membuat situasi jika user pilih ya save bill  
-                self.bill_data=self.textarea.get(1.0,END)                                             # Mendapatkan nilai dari baris 1 sampai akhir dalam bill
-                f1=open('bills/'+str(self.bill_no.get())+".txt",'w')                                  # Membuka file bills.txt dan memanggil nomor bill lalu menggunakan parameter mode 'w' untuk mereplace file dan diganti dengan yang baru ditulis
+            if op:                                                                      # Membuat situasi jika user pilih ya save bill  
+                self.bill_data=self.textarea.get(1.0,END)                               # Mendapatkan nilai dari baris 1 sampai akhir dalam bill
+                f1=open('bills/'+str(self.bill_no.get())+".txt",'w')                    # Membuka file bills.txt dan memanggil nomor bill lalu menggunakan parameter mode 'w' untuk mereplace file dan diganti dengan yang baru ditulis
                 f1.write(self.bill_data)                                                                # Masukkan data pada file bills.txt
                 op=messagebox.showinfo("Saved",f"Bill No:{self.bill_no.get()} Saved Successfully!")     # Membuat notifikasi bila bill dengan nomor tertentu berhasil disimpan
                 f1.close()                                                                              # Menutup file bills.txt agar menjamin bahwa file akan tetap ditutup walaupun ada error sebelumnya
  
-    def printbill(self):                                                                   # Membuat fungsi print bill dengan parameter self agar user dapat melakukan print bill
+    def printbill(self):                                                        # Membuat fungsi print bill dengan parameter self agar user dapat melakukan print bill
         if self.var_roomtype.get()=="Select Type":                              # Membuat decision jika user belum memilih jenis kamar
             messagebox.showerror("Error","Please CLick Generate Bill")          # Memunculkan notifikasi error
             self.new_window=Toplevel(self.root)                                 # Memunculkan windows baru dengan TopLevel
@@ -1500,8 +1499,8 @@ class Bill_App2:                                                                
         self.textarea.insert(END,f"\n Address\t\t\t: {self.var_address.get()}")                         # Menampilkan address pada bill frame
 
         self.textarea.insert(END,"\n==================================================")                        # Variasi Bill
-        self.textarea.insert(END,'\t\t\t "THE ALANA HOTEL AND CONVENTION CENTER SOLO"\n')                                  # Menampilkan keterangan nama hotel
-        self.textarea.insert(END,'\n  Jl. Adi Sucipto, Colomadu, Karanganyar, Kec. Colomadu, Kota Surakarta\n')          # Menampilkan keterangan alamat hotel
+        self.textarea.insert(END,'\t\t  "THE ALANA HOTEL AND CONVENTION CENTER SOLO"\n')                        # Menampilkan keterangan nama hotel
+        self.textarea.insert(END,'\n Jl. Adi Sucipto,Colomadu,Karanganyar,Kec. Colomadu,Surakarta\n')           # Menampilkan keterangan alamat hotel
         self.textarea.insert(END,f"\n  Room Type\t\tQuantity\t          No of Days\t\t        Room Price")      # Menampilkan keterangan Jenis kamar,jumlah,lama menginap, dan total harga kamar 
         self.textarea.insert(END,"\n==================================================")                        # Variasi bill
    
@@ -1620,7 +1619,7 @@ class Bill_App3:                                                                
         self.var_codebayartunai.set(u)                                                  # Melakukan set untuk var_codebayartunai agar angka random muncul otomatis
 
         # Reservation Room Type List
-        self.RoomType=["Select Type","Superior Twin Room","Executive Room Double Bed","Executive Room","Superior Family Room"]     # Membuat data list RoomType dengan parameter self
+        self.RoomType=["Select Type","Superior Twin Room","Superior Double Bedroom.","Executive Room","Superior Family Room"]     # Membuat data list RoomType dengan parameter self
         self.price_SuperiorrTwinRoom=471000                                                # Membuat variabel price_Suite2Bedrooms dengan parameter self bernilai 1091698
         self.price_SuperiorRoomDoubleBed=471000                                                     # Membuat variabel price_DeluxeRoom dengan parameter self bernilai 558178
         self.price_ExecutiveRoom=621000                                                   # Membuat variabel price_SuperiorRoom dengan parameter self bernilai 499999 
@@ -2119,8 +2118,8 @@ class Bill_App3:                                                                
         self.textarea.insert(END,f"\n Address\t\t\t: {self.var_address.get()}")                         # Menampilkan address pada bill frame
 
         self.textarea.insert(END,"\n==================================================")                        # Variasi Bill
-        self.textarea.insert(END,'\t\t\t "NOVOTEL SOLO HOTEL"\n')                                  # Menampilkan keterangan nama hotel
-        self.textarea.insert(END,'\n  Jl. Slamet Riyadi No. 272, Kec. Banjarsari, Kota Surakarta, 57131 \n')          # Menampilkan keterangan alamat hotel
+        self.textarea.insert(END,'\t\t\t\t "NOVOTEL SOLO HOTEL"\n')                                               # Menampilkan keterangan nama hotel
+        self.textarea.insert(END,'\n  Jl. Slamet Riyadi No. 272, Kec. Banjarsari, Kota Surakarta, 57131 \n')    # Menampilkan keterangan alamat hotel
         self.textarea.insert(END,f"\n  Room Type\t\tQuantity\t          No of Days\t\t        Room Price")      # Menampilkan keterangan Jenis kamar,jumlah,lama menginap, dan total harga kamar 
         self.textarea.insert(END,"\n==================================================")                        # Variasi bill
    
@@ -2730,8 +2729,8 @@ class Bill_App4:                                                                
         self.textarea.insert(END,f"\n Address\t\t\t: {self.var_address.get()}")                         # Menampilkan address pada bill frame
 
         self.textarea.insert(END,"\n==================================================")                        # Variasi Bill
-        self.textarea.insert(END,'\t\t\t "ASTON SOLO HOTEL"\n')                                  # Menampilkan keterangan nama hotel
-        self.textarea.insert(END,'\n  Jl. Slamet Riyadi No.373, Sondakan, Kec. Laweyan, Kota Surakarta\n')          # Menampilkan keterangan alamat hotel
+        self.textarea.insert(END,'\t\t\t\t  "ASTON SOLO HOTEL"\n')                                  # Menampilkan keterangan nama hotel
+        self.textarea.insert(END,'\nJl. Slamet Riyadi No.373, Sondakan, Kec. Laweyan, Kota Surakarta\n')          # Menampilkan keterangan alamat hotel
         self.textarea.insert(END,f"\n  Room Type\t\tQuantity\t          No of Days\t\t        Room Price")      # Menampilkan keterangan Jenis kamar,jumlah,lama menginap, dan total harga kamar 
         self.textarea.insert(END,"\n==================================================")                        # Variasi bill
    
@@ -2850,7 +2849,7 @@ class Bill_App5:                                                                
         self.var_codebayartunai.set(u)                                                  # Melakukan set untuk var_codebayartunai agar angka random muncul otomatis
 
         # Reservation Room Type List
-        self.RoomType=["Select Type","Deluxe Hollywood Twin Room","Deluxe King","Executive Suite","Business Suite","Premier Suite","Presidential Suite"]     # Membuat data list RoomType dengan parameter self
+        self.RoomType=["Select Type","Deluxe Hollywood Twin R.","Deluxe King","Executive Suite","Business Suite","Premier Suite","Presidential Suite"]     # Membuat data list RoomType dengan parameter self
         self.price_DeluxeHollywoodTwinRoom=564376                                        # Membuat variabel price_Suite2Bedrooms dengan parameter self bernilai 1091698
         self.price_DeluxeKing=564376                                                     # Membuat variabel price_DeluxeRoom dengan parameter self bernilai 558178
         self.price_ExecutiveSuite=1163636                                                 # Membuat variabel price_SuperiorRoom dengan parameter self bernilai 499999 
@@ -3336,7 +3335,7 @@ class Bill_App5:                                                                
         
     def welcome(self):                                                                                  # Membuat fungsi welcome dengan parameter self untuk sebagai template awal yang muncul pada frame bill dengan datanya sendiri masih kosong
         self.textarea.delete(1.0,END)                                                                   # Menghapus semua value pada variabel menjadi nol/kosong
-        self.textarea.insert(END,"\t ~ WELCOME TO SWISSBELL HOTEL ~\n")                              # Menampilkan judul pada bill frame
+        self.textarea.insert(END,"\t ~ WELCOME TO MR.CONFORGING SOLO ~\n")                              # Menampilkan judul pada bill frame
         self.textarea.insert(END,f"\n Bill Number\t\t\t: {self.bill_no.get()}")                         # Menampilkan bill number pada bill frame
         self.textarea.insert(END,f"\n Customer Ref\t\t\t: {self.var_ref.get()}")                        # Menampilkan customer ref pada bill frame
         self.textarea.insert(END,f"\n Customer Name\t\t\t: {self.var_cust_name.get()}")                 # Menampilkan customer name pada bill frame
@@ -3350,8 +3349,8 @@ class Bill_App5:                                                                
         self.textarea.insert(END,f"\n Address\t\t\t: {self.var_address.get()}")                         # Menampilkan address pada bill frame
 
         self.textarea.insert(END,"\n==================================================")                        # Variasi Bill
-        self.textarea.insert(END,'\t\t\t "SWISSBELL HOTEL"\n')                                  # Menampilkan keterangan nama hotel
-        self.textarea.insert(END,'\n  Jl. A. Yani No.45, Gilingan, Kec. Banjarsari, Kota Surakarta\n')          # Menampilkan keterangan alamat hotel
+        self.textarea.insert(END,'\t\t\t\t   "SWISSBELL HOTEL"\n')                                  # Menampilkan keterangan nama hotel
+        self.textarea.insert(END,'\n     Jl. A. Yani No.45, Gilingan, Kec. Banjarsari, Kota Surakarta\n')          # Menampilkan keterangan alamat hotel
         self.textarea.insert(END,f"\n  Room Type\t\tQuantity\t          No of Days\t\t        Room Price")      # Menampilkan keterangan Jenis kamar,jumlah,lama menginap, dan total harga kamar 
         self.textarea.insert(END,"\n==================================================")                        # Variasi bill
    
