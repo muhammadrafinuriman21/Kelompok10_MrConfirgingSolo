@@ -68,7 +68,7 @@ class Login_Window:                                     # Membuat class berisi g
         
         # --------------- BUTTON            # Bagian TOMBOL
         # Login Button                      # Tombol untuk login user
-        loginbtn=Button(frame,command=self.login,text="Login",font=("times neew roman",15,"bold"), bd=3, relief=RIDGE,fg="white",bg="red",activeforeground="white", activebackground="red")     # Membuat tombol login user bertuliskan "Login" dengan warna yang disesuaikan
+        loginbtn=Button(frame,command=self.login,text="Login",font=("times neew roman",15,"bold"), bd=5, relief=RIDGE,fg="white",bg="red",activeforeground="white", activebackground="red")     # Membuat tombol login user bertuliskan "Login" dengan warna yang disesuaikan
         loginbtn.place(x=110,y=300,width=120,height=35)         # Mengatur dimensi dan lokasi dari tombol Login pada frame login                                                                                                                             
 
          # Register Button                  # Tombol untuk register user
@@ -190,17 +190,17 @@ class Register:                                                 # Membuat class 
         self.checkbtn.place(x=50,y=380)                                                                                                                         # Dengan koordinat yang disesuaikan
 
         # ===================buttons=================
-        img=Image.open(r"images\register-now-button1.jpg")     # Menginput gambar "register-now-button1.jpg"
-        img=img.resize((200,55),Image.ANTIALIAS)        # Mengubah ukuran foto register dengan dimensi yang disesuaikan
+        img=Image.open(r"images\REGISTER.png")     # Menginput gambar "REGISTER.png"
+        img=img.resize((200,60),Image.ANTIALIAS)        # Mengubah ukuran foto register dengan dimensi yang disesuaikan
         self.photoimage=ImageTk.PhotoImage(img)         # Menginput gambar ke Tkinter pada frame register
         b1=Button(frame,image=self.photoimage,command=self.register_data,borderwidth=0,cursor="hand2",font=("times new roman",15,"bold"),fg="brown")    # Menjadikan foto sebelumnya menjadi button
-        b1.place(x=80,y=420,width=200)                  # Mengatur posisi gambar yang telah menjadi button dengan koordinat dan lebar yang disesuaikan
+        b1.place(x=80,y=420,width=200,height=60)                  # Mengatur posisi gambar yang telah menjadi button dengan koordinat dan lebar yang disesuaikan
         
-        img1=Image.open(r"images\login.jpg")   # Menginput gambar "login.jpg" 
-        img1=img1.resize((200,100),Image.ANTIALIAS)                                                 # Mengubah ukuran foto login now dengan dimensi foto yang disesuaikan
+        img1=Image.open(r"images\LOGIN.png")   # Menginput gambar "images\LOGIN.png" 
+        img1=img1.resize((200,60),Image.ANTIALIAS)                                                 # Mengubah ukuran foto login now dengan dimensi foto yang disesuaikan
         self.photoimage1=ImageTk.PhotoImage(img1)                                                   # Menginput gambar ke Tkinter pada frame register
         b1=Button(frame,image=self.photoimage1,command=self.return_login,borderwidth=0,cursor="hand2",font=("times new roman",15,"bold"),fg="brown")    # Menjadikan foto sebelumnya menjadi button
-        b1.place(x=400,y=415,width=200)                 # Mengatur posisi gambar yang telah menjadi button dengan koordinat dan lebar yang disesuaikan
+        b1.place(x=400,y=420,width=200,height=60)                 # Mengatur posisi gambar yang telah menjadi button dengan koordinat dan lebar yang disesuaikan
 
 
     # =======================Function Declaration=====================      # Bagian Fungsi-Fungsi
@@ -239,18 +239,18 @@ class HotelManagementSystem:                        # Membuat class berisi gabun
         self.root.geometry("1550x800+0+0")          # Membuat ukuran window pilihan hotel dengan panjang 1550 pixel, lebar 800 pixel, bergeser 0 pixel dari sumbu X, bergeser 0 pixel dari sumbu Y 
     
         # =========================Gambar foto paling atas===============================
-        img1 = Image.open(r"images\hotelmewah4.jpg")   # Menginput gambar "hotelmewah4.jpg"
-        img1 = img1.resize((1550,140),Image.ANTIALIAS)                                                      # Mengubah dimensi ukuran gambar "hotelmewah4.jpg" menjadi 1550 x 140 pixel
+        img1 = Image.open(r"images\5hotel.png")   # Menginput gambar "5hotel.png"
+        img1 = img1.resize((1300,140),Image.ANTIALIAS)                                                      # Mengubah dimensi ukuran gambar "hotelmewah4.jpg" menjadi 1550 x 140 pixel
         self.photoimg1=ImageTk.PhotoImage(img1)                                                             # Menginput gambar ke Tkinter pada frame Mr.Conforging Solo
         lblimg=Label(self.root,image=self.photoimg1,bd=4,relief=RIDGE)                                      # Mengatur format foto yang disesuaikan
-        lblimg.place(x=0,y=0,width=1550, height=140)                                                        # Mengatur posisi gambar pada frame dengan jarak terhadap sumbu x dan y adalah 0 pixel dan panjang lebar disesuaikan
+        lblimg.place(x=260,y=0,width=1300, height=140)                                                        # Mengatur posisi gambar pada frame dengan jarak terhadap sumbu x dan y adalah 0 pixel dan panjang lebar disesuaikan
  
          # =========================logo===============================
         img2 = Image.open(r"images\logobaru.png")      # Menginput gambar "logobaru.png"
-        img2 = img2.resize((230,140),Image.ANTIALIAS)                                                       # Mengubah dimensi ukuran gambar
+        img2 = img2.resize((260,140),Image.ANTIALIAS)                                                       # Mengubah dimensi ukuran gambar
         self.photoimg2=ImageTk.PhotoImage(img2)                                                             # Menginput gambar ke Tkinter pada frame Mr.Conforging Solo 
         lblimg=Label(self.root,image=self.photoimg2,bd=4,relief=RIDGE)                                      # Mengatur format foto yang disesuaikan
-        lblimg.place(x=0,y=0,width=230, height=140)                                                         # Mengatur posisi gambar pada frame dengan jarak terhadap sumbu x dan y adalah 0 pixel dan panjang lebar disesuaikan
+        lblimg.place(x=0,y=0,width=260, height=140)                                                         # Mengatur posisi gambar pada frame dengan jarak terhadap sumbu x dan y adalah 0 pixel dan panjang lebar disesuaikan
 
         # =============================title===========================
         lbl_title=Label(self.root,text="~  MR. CONFORGING SOLO  ~",font= ("times new roman",40,"bold"), bg="brown", fg="white", bd=4,relief=RIDGE)  # Membuat label bertuliskan Mr.Conforging Solo dengan font dan format yang disesuaikan
@@ -262,56 +262,57 @@ class HotelManagementSystem:                        # Membuat class berisi gabun
 
         # ========= Kotak Tulisan Menu ===========
         lbl_menu=Label(main_frame,text="MENU",font= ("times new roman",20,"bold"), bg="red", fg="white", bd=4,relief=RIDGE)     # Membuat label tulisan "MENU" dengan font dan format yang disesuaikan 
-        lbl_menu.place(x=0, y=0, width=230)                             # Mengatur posisi dan lebar label
+        lbl_menu.place(x=0, y=0, width=260)                             # Mengatur posisi dan lebar label
 
+        # ========= List Anggota Kelompok 10 ===========        # Membuat kotak creator yakni kelompok 10 pada bagian paling bawah pada window HotelManagementSystem
+        lbl_creator=Label(main_frame, text="       Created by (KELOMPOK 10) : 1) Muhammad Rafi Nur Iman, 2) Layyina Khonsa, 3) Micco Fernando, 4) Najla Dzakya, 5) Giovanno Yurio\t\t Supported by : Lab POSI UNS",font= ("times new roman",12,"bold"), bg="brown", fg="white", bd=4,relief=RIDGE)
+        lbl_creator.place(x=130, y=580, width=1500)
 
         # =========================== Frame Tombol-Tombol=========================
         btn_frame=Frame(main_frame,bd=4,relief=RIDGE)               # Membuat frame untuk tombol-tombol pada frame Mr.Conforging Solo
-        btn_frame.place(x=0,y=35,width=228,height=230)              # Mengatur posisi dan dimensi frame tombol
+        btn_frame.place(x=0,y=35,width=260,height=230)              # Mengatur posisi dan dimensi frame tombol
 
-        hotel1_btn=Button(btn_frame,text="SOLO PARAGON",width=20,command=self.SoloParagonHotel,font= ("times new roman",14,"bold"), bg="brown", fg="white",bd=0,cursor="hand1")     # Membuat tombol 1 untuk masuk ke frame SoloParagonHotel
+        hotel1_btn=Button(btn_frame,text="SOLO PARAGON",width=23,command=self.SoloParagonHotel,font= ("times new roman",14,"bold"), bg="brown", fg="white",bd=0,activeforeground="white", activebackground="brown",cursor="hand1")      # Membuat tombol 1 untuk masuk ke window SoloParagonHotel
         hotel1_btn.grid(row=0,column=0,pady=1)          # Mengatur posisi tombol hotel 1
 
-        hotel2_btn=Button(btn_frame,text="THE ALANA SOLO",width=20,command=self.TheAlanaSolo,font= ("times new roman",14,"bold"), bg="brown", fg="white",bd=0,cursor="hand1")
+        hotel2_btn=Button(btn_frame,text="THE ALANA SOLO",width=23,command=self.TheAlanaSolo,font= ("times new roman",14,"bold"), bg="brown", fg="white",bd=0,activeforeground="white", activebackground="brown",cursor="hand1")        # Membuat tombol 2 untuk masuk ke window TheAlanaSolo
         hotel2_btn.grid(row=1,column=0,pady=1)          # Mengatur posisi tombol hotel 2
 
-        hotel3_btn=Button(btn_frame,text="NOVOTEL SOLO",width=20,command=self.NovotelSolo,font= ("times new roman",14,"bold"), bg="brown", fg="white",bd=0,cursor="hand1")
+        hotel3_btn=Button(btn_frame,text="NOVOTEL SOLO",width=23,command=self.NovotelSolo,font= ("times new roman",14,"bold"), bg="brown", fg="white",bd=0,activeforeground="white", activebackground="brown",cursor="hand1")           # Membuat tombol 3 untuk masuk ke window NovotelSolo
         hotel3_btn.grid(row=2,column=0,pady=1)          # Mengatur posisi tombol hotel 3
 
-        hotel4_btn=Button(btn_frame,text="ASTON SOLO",width=20,command=self.AstonSolo,font= ("times new roman",14,"bold"), bg="brown", fg="white",bd=0,cursor="hand1")
+        hotel4_btn=Button(btn_frame,text="ASTON SOLO",width=23,command=self.AstonSolo,font= ("times new roman",14,"bold"), bg="brown", fg="white",bd=0,activeforeground="white", activebackground="brown",cursor="hand1")               # Membuat tombol 4 untuk masuk ke window AstonSolo
         hotel4_btn.grid(row=3,column=0,pady=1)          # Mengatur posisi tombol hotel 4
 
-        hotel5_btn=Button(btn_frame,text="SWISSBELL SOLO",width=20,command=self.SwissbellSolo,font= ("times new roman",14,"bold"), bg="brown", fg="white",bd=0,cursor="hand1")
+        hotel5_btn=Button(btn_frame,text="SWISSBELL SOLO",width=23,command=self.SwissbellSolo,font= ("times new roman",14,"bold"), bg="brown", fg="white",bd=0,activeforeground="white", activebackground="brown",cursor="hand1")       # Membuat tombol 5 untuk masuk ke window SwissbellSolo
         hotel5_btn.grid(row=4,column=0,pady=1)          # Mengatur posisi tombol hotel 5
 
-        exit_btn=Button(btn_frame,command=self.root.destroy,text="Exit",width=20,font= ("times new roman",14,"bold"), bg="brown", fg="white",bd=0,cursor="hand1")       # Membuat tombol exit untuk keluar dari frame Mr.Conforging Solo dan kembali ke frame login 
+        exit_btn=Button(btn_frame,command=self.root.destroy,text="Exit",width=23,font= ("times new roman",14,"bold"), bg="brown", fg="white",bd=0,activeforeground="white", activebackground="brown",cursor="hand1")                    # Membuat tombol exit untuk keluar dari frame Mr.Conforging Solo dan kembali ke frame login 
         exit_btn.grid(row=5,column=0,pady=1)            # Mengatur posisi tombol Exit
 
         
-
-
         # ======================== Foto Tengah ====================
         img3=Image.open(r"images\slide5.jpg")      # Menginput gambar "slide5.jpg"
         img3 = img3.resize((1310,590),Image.ANTIALIAS)                                                  # Mengubah dimensi ukuran gambar
         self.photoimg3=ImageTk.PhotoImage(img3)                                                         # Menginput gambar ke Tkinter pada frame Mr.Conforging Solo
         lblimg1=Label(main_frame,image=self.photoimg3,bd=4,relief=RIDGE)                                # Mengatur format foto yang disesuaikan
-        lblimg1.place(x=225,y=0,width=1310,height=590)                                                  # Mengatur posisi gambar pada frame dengan jarak terhadap sumbu x=225 pixel, sumbu y=0 pixel, dan panjang lebar disesuaikan
-
+        lblimg1.place(x=255,y=0,width=1310,height=582)                                                  # Mengatur posisi gambar pada frame dengan jarak terhadap sumbu x=225 pixel, sumbu y=0 pixel, dan panjang lebar disesuaikan
+        
 
         # ======================== Foto Hiasan Pinggir Kiri ==========================
         # Foto hiasan 1
-        img4=Image.open(r"images\myh.jpg")         # Menginput gambar "myh.jpg"
+        img4=Image.open(r"images\fotopetasolo2.jpg")         # Menginput gambar "myh.jpg"
         img4 = img4.resize((260,170),Image.ANTIALIAS)                                                   # Mengubah dimensi ukuran gambar
         self.photoimg4=ImageTk.PhotoImage(img4)                                                         # Menginput gambar ke Tkinter pada frame Mr.Conforging Solo
         lblimg1=Label(main_frame,image=self.photoimg4,bd=4,relief=RIDGE)                                # Mengatur format foto yang disesuaikan
-        lblimg1.place(x=0,y=260,width=230,height=170)                                                   # Mengatur posisi gambar pada frame dengan jarak terhadap sumbu x=0 pixel, sumbu y=260 pixel, dan panjang lebar disesuaikan
+        lblimg1.place(x=0,y=260,width=260,height=170)                                                   # Mengatur posisi gambar pada frame dengan jarak terhadap sumbu x=0 pixel, sumbu y=260 pixel, dan panjang lebar disesuaikan
         
         # Foto Hiasan 2 
-        img5=Image.open(r"images\khana.jpg")       # Menginput gambar "khana.jpg"
-        img5 = img5.resize((230,190),Image.ANTIALIAS)                                                   # Mengubah dimensi ukuran gambar
+        img5=Image.open(r"images\tampilandepanlogin.jpg")       # Menginput gambar "khana.jpg"
+        img5 = img5.resize((260,190),Image.ANTIALIAS)                                                   # Mengubah dimensi ukuran gambar
         self.photoimg5=ImageTk.PhotoImage(img5)                                                         # Menginput gambar ke Tkinter pada frame Mr.Conforging Solo
         lblimg1=Label(main_frame,image=self.photoimg5,bd=4,relief=RIDGE)                                # Mengatur format foot yang disesuaikan
-        lblimg1.place(x=0,y=420,width=230,height=190)                                                   # Mengatur gambar pada frame dengan jarak terhadap sumbu x=0 pixel, sumbu y=420 pixel, dan panjang lebar disesuaikan
+        lblimg1.place(x=0,y=430,width=260,height=190)                                                   # Mengatur gambar pada frame dengan jarak terhadap sumbu x=0 pixel, sumbu y=420 pixel, dan panjang lebar disesuaikan
     
     def SoloParagonHotel(self):                             # Membuat fungsi SoloParagonHotel dengan parameter self agar saat user klik tombol Solo Paragon
         self.new_window=Toplevel(self.root)                 # Maka frame Bill_App1 akan menutupi frame sebelumnya menggunakan Toplevel
@@ -854,12 +855,12 @@ class Bill_App1:                                                                
         self.var_id_type.set("")                        # Menjadikan Cust idItype menjadi kosong kembali
         self.var_id_number.set(0)                       # Menjadikan Cust id number menjadi kosong kembali
         self.var_address.set("")                        # Menjadikan Cust addres menjadi kosong kembali
-        self.var_roomtype.set("")                       # Menjadikan room type menjadi kosong kembali
+        self.var_roomtype.set("Select Type")                       # Menjadikan room type menjadi kosong kembali
         self.var_roomprice.set(0)                       # Menjadikan room price menjadi kosong kembali
         self.var_quantity.set(0)                        # Menjadikan quantity room menjadi kosong kembali
         self.var_noofdays.set(0)                        # Menjadikan lama menginap menjadi kosong kembali
         self.var_checkin.set("")                        # Menjadikan data checkin menjadi kosong kembali
-        self.var_earlycheckin.set("")                   # Menjadikan data early checkin menjadi kosong kembali
+        self.var_earlycheckin.set("Select Time")                   # Menjadikan data early checkin menjadi kosong kembali
         self.var_latecheckout.set("")                   # Menjadikan data latest cehckout menjadi kosong kembali
         self.var_paymentmethod.set("")                  # Menjadikan onlinepayment menjadi kosong kembali
         self.var_onlinepayment.set("")                  # Menjadikan online payment menjadi kosong kembali
@@ -1465,12 +1466,12 @@ class Bill_App2:                                                                
         self.var_id_type.set("")                        # Menjadikan Cust idItype menjadi kosong kembali
         self.var_id_number.set(0)                       # Menjadikan Cust id number menjadi kosong kembali
         self.var_address.set("")                        # Menjadikan Cust addres menjadi kosong kembali
-        self.var_roomtype.set("")                       # Menjadikan room type menjadi kosong kembali
+        self.var_roomtype.set("Select Type")                       # Menjadikan room type menjadi kosong kembali
         self.var_roomprice.set(0)                       # Menjadikan room price menjadi kosong kembali
         self.var_quantity.set(0)                        # Menjadikan quantity room menjadi kosong kembali
         self.var_noofdays.set(0)                        # Menjadikan lama menginap menjadi kosong kembali
         self.var_checkin.set("")                        # Menjadikan data checkin menjadi kosong kembali
-        self.var_earlycheckin.set("")                   # Menjadikan data early checkin menjadi kosong kembali
+        self.var_earlycheckin.set("Select Time")                   # Menjadikan data early checkin menjadi kosong kembali
         self.var_latecheckout.set("")                   # Menjadikan data latest cehckout menjadi kosong kembali
         self.var_paymentmethod.set("")                  # Menjadikan onlinepayment menjadi kosong kembali
         self.var_onlinepayment.set("")                  # Menjadikan online payment menjadi kosong kembali
@@ -2084,12 +2085,12 @@ class Bill_App3:                                                                
         self.var_id_type.set("")                        # Menjadikan Cust idItype menjadi kosong kembali
         self.var_id_number.set(0)                       # Menjadikan Cust id number menjadi kosong kembali
         self.var_address.set("")                        # Menjadikan Cust addres menjadi kosong kembali
-        self.var_roomtype.set("")                       # Menjadikan room type menjadi kosong kembali
+        self.var_roomtype.set("Select Type")                       # Menjadikan room type menjadi kosong kembali
         self.var_roomprice.set(0)                       # Menjadikan room price menjadi kosong kembali
         self.var_quantity.set(0)                        # Menjadikan quantity room menjadi kosong kembali
         self.var_noofdays.set(0)                        # Menjadikan lama menginap menjadi kosong kembali
         self.var_checkin.set("")                        # Menjadikan data checkin menjadi kosong kembali
-        self.var_earlycheckin.set("")                   # Menjadikan data early checkin menjadi kosong kembali
+        self.var_earlycheckin.set("Select Time")                   # Menjadikan data early checkin menjadi kosong kembali
         self.var_latecheckout.set("")                   # Menjadikan data latest cehckout menjadi kosong kembali
         self.var_paymentmethod.set("")                  # Menjadikan onlinepayment menjadi kosong kembali
         self.var_onlinepayment.set("")                  # Menjadikan online payment menjadi kosong kembali
@@ -2695,12 +2696,12 @@ class Bill_App4:                                                                
         self.var_id_type.set("")                        # Menjadikan Cust idItype menjadi kosong kembali
         self.var_id_number.set(0)                       # Menjadikan Cust id number menjadi kosong kembali
         self.var_address.set("")                        # Menjadikan Cust addres menjadi kosong kembali
-        self.var_roomtype.set("")                       # Menjadikan room type menjadi kosong kembali
+        self.var_roomtype.set("Select Type")                       # Menjadikan room type menjadi kosong kembali
         self.var_roomprice.set(0)                       # Menjadikan room price menjadi kosong kembali
         self.var_quantity.set(0)                        # Menjadikan quantity room menjadi kosong kembali
         self.var_noofdays.set(0)                        # Menjadikan lama menginap menjadi kosong kembali
         self.var_checkin.set("")                        # Menjadikan data checkin menjadi kosong kembali
-        self.var_earlycheckin.set("")                   # Menjadikan data early checkin menjadi kosong kembali
+        self.var_earlycheckin.set("Select Time")                   # Menjadikan data early checkin menjadi kosong kembali
         self.var_latecheckout.set("")                   # Menjadikan data latest cehckout menjadi kosong kembali
         self.var_paymentmethod.set("")                  # Menjadikan onlinepayment menjadi kosong kembali
         self.var_onlinepayment.set("")                  # Menjadikan online payment menjadi kosong kembali
@@ -3315,12 +3316,12 @@ class Bill_App5:                                                                
         self.var_id_type.set("")                        # Menjadikan Cust idItype menjadi kosong kembali
         self.var_id_number.set(0)                       # Menjadikan Cust id number menjadi kosong kembali
         self.var_address.set("")                        # Menjadikan Cust addres menjadi kosong kembali
-        self.var_roomtype.set("")                       # Menjadikan room type menjadi kosong kembali
+        self.var_roomtype.set("Select Type")                       # Menjadikan room type menjadi kosong kembali
         self.var_roomprice.set(0)                       # Menjadikan room price menjadi kosong kembali
         self.var_quantity.set(0)                        # Menjadikan quantity room menjadi kosong kembali
         self.var_noofdays.set(0)                        # Menjadikan lama menginap menjadi kosong kembali
         self.var_checkin.set("")                        # Menjadikan data checkin menjadi kosong kembali
-        self.var_earlycheckin.set("")                   # Menjadikan data early checkin menjadi kosong kembali
+        self.var_earlycheckin.set("Select Time")                   # Menjadikan data early checkin menjadi kosong kembali
         self.var_latecheckout.set("")                   # Menjadikan data latest cehckout menjadi kosong kembali
         self.var_paymentmethod.set("")                  # Menjadikan onlinepayment menjadi kosong kembali
         self.var_onlinepayment.set("")                  # Menjadikan online payment menjadi kosong kembali
