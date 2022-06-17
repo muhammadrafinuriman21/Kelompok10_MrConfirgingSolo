@@ -1349,15 +1349,11 @@ class Bill_App2:                                                                
             
             if self.var_latecheckout.get()=="Select Time":                          # Decision saat belum memilih late check-out
                 messagebox.showerror("Error","Please Select Check-Out Time",parent=self.root)        # Muncul notifikasi error
-                self.new_window=Toplevel(self.root)                                 # Membuka new window dengan toplevel agar posisi paling atas
-                self.app=Bill_App2(self.new_window)                                 # Membukanya adalah window Bill_App2
             else:
                 self.textarea.insert(END,f"\n Late Check-Out\t\t\t: {self.var_latecheckout.get()}")     # Memasukkan data Late Check-Out ke text area
             
             if self.var_meal.get()=="Select Meal":                          # Decision saat belum memilih Meal
                 messagebox.showerror("Error","Please Select Meal",parent=self.root)          # Muncul notifikasi error  
-                self.new_window=Toplevel(self.root)                         # Membuka new window dengan toplevel agar posisi paling atas
-                self.app=Bill_App2(self.new_window)                         # Membukanya adalah window Bill_App2
             else:
                 self.textarea.insert(END,f"\n Meal\t\t\t: {self.var_meal.get()}")   # Memasukkan data Meal ke text area
             
