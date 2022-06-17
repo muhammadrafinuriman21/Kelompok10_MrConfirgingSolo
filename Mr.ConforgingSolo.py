@@ -84,14 +84,14 @@ class Login_Window:                                     # Membuat class berisi g
         userData = pd.read_csv('userdatabase.csv')                  # Membuat variabel userData untuk melakukan read file userdatabase.csv
         df = pd.DataFrame(userData)                                 # Membuat variabel df untuk mengakses data pada variabel userData
         if self.txtemail.get()=="" or self.txtpass.get()=="":       # Membuat decision untuk perintah error bila saat user klik tombol login tanpa memasukkan input apapun  
-            messagebox.showerror("Error", "All field required")     # Menampilkan messagebox error
+            messagebox.showerror("Error", "All field required", parent=self.root)     # Menampilkan messagebox error
         elif (len(df[(df.email == self.txtemail.get()) & (df.password == self.txtpass.get())]) > 0):        # Membuat decision untuk perintah berhasil login bila username dan password ada pada file userdatabase.csv
             messagebox.showinfo("Success", "Welcome to Mr. Conforging Solo")                                # Menampilkan messagebox sukses login
             self.new_window=Toplevel(self.root)                                                             # Memunculkan frame window baru
             self.app=HotelManagementSystem(self.new_window)
                                                              # Yakni memunculkan frame pada class HotelManagementSystem 
         else:                                                                           # Membuat decision untuk perintah error bila username atau password yang dimasukkan salah atau tidak ada pada file userdatabase.csv 
-            messagebox.showerror("Error", "Email atau Password Anda salah")             # Menampilkan messagebox error berupa info email atau password yang dimasukkan keliru        
+            messagebox.showerror("Error", "Email atau Password Anda salah",parent=self.root)             # Menampilkan messagebox error berupa info email atau password yang dimasukkan keliru        
 
 class Register:                                                 # Membuat class berisi gabungan dari beberapa fungsi untuk user melakukan registrasi 
     def __init__(self,root):                                    # Mendefinisikan fungsi dalam class dengan nama __init__ dengan parameternya harus "self" (merujuk pada objek class) dan ada parameter tambahan yaitu "root"                                   
@@ -206,11 +206,11 @@ class Register:                                                 # Membuat class 
     # =======================Function Declaration=====================      # Bagian Fungsi-Fungsi
     def register_data(self):                                                                            # Membuat fungsi bernama register_data dengan parameter self
         if self.var_fname.get()=="" or self.var_email.get()=="" or self.var_securityQ.get()=="Select":  # Membuat decision bila data first name/email/security masih belum terisi atau masih bertuliskan "Select"
-            messagebox.showerror("Error", "All fields are required")                                    # Memunculkan notifikasi error dan meminta untuk memasukkan data-data tersebut
+            messagebox.showerror("Error", "All fields are required",parent=self.root)                                    # Memunculkan notifikasi error dan meminta untuk memasukkan data-data tersebut
         elif self.var_pass.get()!=self.var_confpass.get():                              # Membuat decision bila value password dan confirm password berbeda
-            messagebox.showerror("Error", "Password & Confirm Password Must Be Same")   # Memunculkan notifikasi error dan meminta untuk memasukkan data yang sama agar dapat lanjut registrasi
+            messagebox.showerror("Error", "Password & Confirm Password Must Be Same",parent=self.root)   # Memunculkan notifikasi error dan meminta untuk memasukkan data yang sama agar dapat lanjut registrasi
         elif self.var_check.get()==0:                                               # Membuat decision bila tidak mencentang kotak ceklis
-            messagebox.showerror("Error", "Please agree our terms and condition")   # Memunculkan notifikasi error dan meminta untuk menceklis kotak isian 
+            messagebox.showerror("Error", "Please agree our terms and condition",parent=self.root)   # Memunculkan notifikasi error dan meminta untuk menceklis kotak isian 
         else:                                                                           # Membuat decision selain syarat sebelumnya
             newuser = {'firstname' : [self.fname_entry.get()],                          # Membuat variabel newuser yang berisi data dictionary dengan kata kunci dan valuenya mendapatkan nilai kata kunci tersebut
                     'lastname' : [self.txt_lname.get()],
@@ -708,9 +708,7 @@ class Bill_App1:                                                                
         self.o=self.var_noofdays.get()*self.m                                   # membuat variabel self.o yang nantinya akan berisi nilai hasil dari harga kamar * jumlah kamar * lama menginap
         self.l.append(self.o)                                                   # membuat variabel self.l yang nantinya akan berisi nilai dari self.o dan penambahannya
         if self.var_roomtype.get()=="Select Type":                                      # Membuat decision bila user klik tombol Add to cart namun belum memilih tipe kamar
-            messagebox.showerror("Error","Please Select The Room Type Name")            # Maka akan muncul notiifikasi error dan meminta untuk memilih tipe kamar
-            self.new_window=Toplevel(self.root)                                         # Lalu akan memunculkan layar baru dengan Toplevel
-            self.app=Bill_App1(self.new_window)                                         # Membuka kembali window Bill_App1
+            messagebox.showerror("Error","Please Select The Room Type Name",parent=self.root)            # Maka akan muncul notiifikasi error dan meminta untuk memilih tipe kamar
         else:                                                                           # Membuat decision lain (bila user memilih tipe kamar)
             self.textarea.insert(END,f"\n {self.var_roomtype.get()}\t\t{self.var_quantity.get()}\t          {self.var_noofdays.get()}\t\t        {self.o}")     # Menginput dan memunculkan data tipe kamar,jumlah,lama menginap, dan total harga kamar pada frame bill text area
             self.sub_total.set(str('Rp.%.2f'%(sum(self.l))))                                                                    # Menghitung dan memunculkan nilai subtotal setelah dilakukan perhitungan pada frame Bill Counting
@@ -724,13 +722,9 @@ class Bill_App1:                                                                
 
     def gen_bill(self):                                                                             # Membuat fungsi gen_bil untuk generate bill dengan parameter self
         if self.var_roomtype.get()=="Select Type":                                                  # Membuat decision saat user klik tombol generate bill namun belum memilih tipe kamar
-            messagebox.showerror("Error","Please Add to Cart Room and Choose Method Payment")       # Maka akan memunculkan notifikasi error
-            self.new_window=Toplevel(self.root)                                                     # Membuka kembali window Bill
-            self.app=Bill_App1(self.new_window)
-        if self.var_paymentmethod.get()=="Select Pay Method":                                       # Membuat decision saat user klik tombol generate bill namun belum memilih jenis metode pembayaran
-            messagebox.showerror("Error","Please Add to Cart Room and Choose Method Payment")       # Maka akan memunculkan notiifikasi error 
-            self.new_window=Toplevel(self.root)                                                     # Membuka kembali window Bill
-            self.app=Bill_App1(self.new_window)
+            messagebox.showerror("Error","Please Add to Cart Room and Choose Method Payment",parent=self.root)       # Maka akan memunculkan notifikasi error
+        elif self.var_paymentmethod.get()=="Select Pay Method":                                       # Membuat decision saat user klik tombol generate bill namun belum memilih jenis metode pembayaran
+            messagebox.showerror("Error","Please Add to Cart Room and Choose Method Payment",parent=self.root)       # Maka akan memunculkan notiifikasi error 
         else:
             text=self.textarea.get(20.0,(24.0+float(len(self.l))))                                              # membuat variabel text yang akan mengambil data pada baris 20.0 sampai 24.0+len(self.l)
             self.welcome()                                                                                      # Mengisi value pada self.welcome (data pemesan dan informasi hasil biaya)
@@ -739,23 +733,17 @@ class Bill_App1:                                                                
             self.textarea.insert(END,"\n ~ ADDITIONAL INFORMATION ~\n")
             self.textarea.insert(END,f"\n Check-In Date\t\t\t: {self.var_checkin.get()}")           # Memasukkan data Check-In Date ke text area
             if self.var_earlycheckin.get()=="Select Time":                                          # Decision saat belum memilih Early Check-In
-                messagebox.showerror("Error","Please Select Earliest Check-In Time")                # Muncul notifikasi error
-                self.new_window=Toplevel(self.root)                                             # Membuka new window dengan toplevel agar posisi paling atas
-                self.app=Bill_App1(self.new_window)                                             # Membukanya adalah window Bill_App1
+                messagebox.showerror("Error","Please Select Earliest Check-In Time",parent=self.root)                # Muncul notifikasi error                                                             
             else:
-                self.textarea.insert(END,f"\n Earliest Check-In Date\t\t\t: {self.var_earlycheckin.get()}")     # Memasukkan data Earlist Check-In ke text area
+                self.textarea.insert(END,f"\n Earliest Check-In Date\t\t\t: {self.var_earlycheckin.get()}")     # Memasukkan data Earlist Check-In ke text area            
             
             if self.var_latecheckout.get()=="Select Time":                          # Decision saat belum memilih late check-out
-                messagebox.showerror("Error","Please Select Check-Out Time")        # Muncul notifikasi error
-                self.new_window=Toplevel(self.root)                                 # Membuka new window dengan toplevel agar posisi paling atas
-                self.app=Bill_App1(self.new_window)                                 # Membukanya adalah window Bill_App1
+                messagebox.showerror("Error","Please Select Check-Out Time",parent=self.root)        # Muncul notifikasi error
             else:
                 self.textarea.insert(END,f"\n Late Check-Out\t\t\t: {self.var_latecheckout.get()}")     # Memasukkan data Late Check-Out ke text area
             
             if self.var_meal.get()=="Select Meal":                          # Decision saat belum memilih Meal
-                messagebox.showerror("Error","Please Select Meal")          # Muncul notifikasi error  
-                self.new_window=Toplevel(self.root)                         # Membuka new window dengan toplevel agar posisi paling atas
-                self.app=Bill_App1(self.new_window)                         # Membukanya adalah window Bill_App1
+                messagebox.showerror("Error","Please Select Meal",parent=self.root)          # Muncul notifikasi error  
             else:
                 self.textarea.insert(END,f"\n Meal\t\t\t: {self.var_meal.get()}")   # Memasukkan data Meal ke text area
             
@@ -804,23 +792,35 @@ class Bill_App1:                                                                
             
     def save_bill(self):                                                                # Membuat fungsi save_bill dengan parameter self agar bill dapat disimpan user
         if self.var_roomtype.get()=="Select Type":                                      # Membuat decision bila user belum memilih jenis kamar
-            messagebox.showerror("Error","Please CLick Generate Bill")                  # Akan Memunculkan notifikasi error
-            self.new_window=Toplevel(self.root)                                         # Lalu akan membuka windows baru dengan toplevel
-            self.app=Bill_App1(self.new_window)                                         # windownya adalah Bill_App1
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Akan Memunculkan notifikasi error
+        elif self.var_paymentmethod.get()=="Select Pay Method":                                       # Membuat decision saat user klik tombol save bill namun belum memilih jenis metode pembayaran
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Maka akan memunculkan notiifikasi error 
+        elif self.var_earlycheckin.get()=="Select Time":                                              # Decision saat belum memilih Early Check-In
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Muncul notifikasi error
+        elif self.var_latecheckout.get()=="Select Time":                                              # Decision saat belum memilih late check-out
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)             # Muncul notifikasi error
+        elif self.var_meal.get()=="Select Meal":                                         # Decision saat belum memilih Meal
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)          # Muncul notifikasi error
         else:
             op=messagebox.askyesno("Save Bill","Do you want to save the Bill?")         # Memunculkan messagebox untuk meminta user memilih ya atau tidak
             if op:                                                                      # Membuat situasi jika user pilih ya save bill  
                 self.bill_data=self.textarea.get(1.0,END)                               # Mendapatkan nilai dari baris 1 sampai akhir dalam bill
                 f1=open('bills/'+str(self.bill_no.get())+".txt",'w')                    # Membuka file bills.txt dan memanggil nomor bill lalu menggunakan parameter mode 'w' untuk mereplace file dan diganti dengan yang baru ditulis
                 f1.write(self.bill_data)                                                                # Masukkan data pada file bills.txt
-                op=messagebox.showinfo("Saved",f"Bill No:{self.bill_no.get()} Saved Successfully!")     # Membuat notifikasi bila bill dengan nomor tertentu berhasil disimpan
+                op=messagebox.showinfo("Saved",f"Bill No:{self.bill_no.get()} Saved Successfully!",parent=self.root)     # Membuat notifikasi bila bill dengan nomor tertentu berhasil disimpan
                 f1.close()                                                                              # Menutup file bills.txt agar menjamin bahwa file akan tetap ditutup walaupun ada error sebelumnya
  
     def printbill(self):                                                        # Membuat fungsi print bill dengan parameter self agar user dapat melakukan print bill
         if self.var_roomtype.get()=="Select Type":                              # Membuat decision jika user belum memilih jenis kamar
-            messagebox.showerror("Error","Please CLick Generate Bill")          # Memunculkan notifikasi error
-            self.new_window=Toplevel(self.root)                                 # Memunculkan windows baru dengan TopLevel
-            self.app=Bill_App1(self.new_window)                                 # Windownya adalah Bill_App1
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)          # Memunculkan notifikasi error
+        elif self.var_paymentmethod.get()=="Select Pay Method":                                       # Membuat decision saat user klik tombol save bill namun belum memilih jenis metode pembayaran
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Maka akan memunculkan notiifikasi error 
+        elif self.var_earlycheckin.get()=="Select Time":                                              # Decision saat belum memilih Early Check-In
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Muncul notifikasi error
+        elif self.var_latecheckout.get()=="Select Time":                                              # Decision saat belum memilih late check-out
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)             # Muncul notifikasi error
+        elif self.var_meal.get()=="Select Meal":                                         # Decision saat belum memilih Meal
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)          # Muncul notifikasi error
         else:
             q=self.textarea.get(1.0,"end-1c")                   # Mengambil data pada keseluruhan bill
             filename=tempfile.mktemp('.txt')                    # Menggunakan modul tempfile (TemporaryFile) untuk file sementara
@@ -838,9 +838,8 @@ class Bill_App1:                                                                
                 f1.close()                                          # Menutup file agar lebih aman
                 found="yes"                                         # menjadikan found menjadi bernilai yes
         if found=="no":                                         # jika tidak ditemukan nomor bill
-            messagebox.showerror("Error","Invalid Bill No.")    # maka akan muncul messagebox error
-            self.new_window=Toplevel(self.root)                 # membuka window baru dengan toplevel agar berada di posisi paling atas
-            self.app=Bill_App1(self.new_window)                 # windownya adalah Bill_app1
+            messagebox.showerror("Error","Invalid Bill No.",parent=self.root)    # maka akan muncul messagebox error
+            
 
     def clear(self):                                    # Membuat fungsi clear bill dengan parameter self
         self.textarea.delete(1.0,END)                   # Menghapus semua value dalam frame bill
@@ -1319,9 +1318,7 @@ class Bill_App2:                                                                
         self.o=self.var_noofdays.get()*self.m                                   # membuat variabel self.o yang nantinya akan berisi nilai hasil dari harga kamar * jumlah kamar * lama menginap
         self.l.append(self.o)                                                   # membuat variabel self.l yang nantinya akan berisi nilai dari self.o dan penambahannya
         if self.var_roomtype.get()=="Select Type":                                      # Membuat decision bila user klik tombol Add to cart namun belum memilih tipe kamar
-            messagebox.showerror("Error","Please Select The Room Type Name")            # Maka akan muncul notiifikasi error dan meminta untuk memilih tipe kamar
-            self.new_window=Toplevel(self.root)                                         # Lalu akan memunculkan layar baru dengan Toplevel
-            self.app=Bill_App2(self.new_window)                                         # Membuka kembali window Bill_App2
+            messagebox.showerror("Error","Please Select The Room Type Name",parent=self.root)            # Maka akan muncul notiifikasi error dan meminta untuk memilih tipe kamar
         else:                                                                                   # Membuat decision lain (bila user memilih tipe kamar)
             self.textarea.insert(END,f"\n {self.var_roomtype.get()}\t\t{self.var_quantity.get()}\t          {self.var_noofdays.get()}\t\t        {self.o}")     # Menginput dan memunculkan data tipe kamar,jumlah,lama menginap, dan total harga kamar pada frame bill text area
             self.sub_total.set(str('Rp.%.2f'%(sum(self.l))))                                                                    # Menghitung dan memunculkan nilai subtotal setelah dilakukan perhitungan pada frame Bill Counting
@@ -1335,13 +1332,9 @@ class Bill_App2:                                                                
 
     def gen_bill(self):                                                                             # Membuat fungsi gen_bil untuk generate bill dengan parameter self
         if self.var_roomtype.get()=="Select Type":                                                  # Membuat decision saat user klik tombol generate bill namun belum memilih tipe kamar
-            messagebox.showerror("Error","Please Add to Cart Room and Choose Method Payment")       # Maka akan memunculkan notifikasi error
-            self.new_window=Toplevel(self.root)                                                     # Membuka kembali window Bill
-            self.app=Bill_App2(self.new_window)
-        if self.var_paymentmethod.get()=="Select Pay Method":                                       # Membuat decision saat user klik tombol generate bill namun belum memilih jenis metode pembayaran
-            messagebox.showerror("Error","Please Add to Cart Room and Choose Method Payment")       # Maka akan memunculkan notiifikasi error 
-            self.new_window=Toplevel(self.root)                                                     # Membuka kembali window Bill
-            self.app=Bill_App2(self.new_window)
+            messagebox.showerror("Error","Please Add to Cart Room and Choose Method Payment",parent=self.root)       # Maka akan memunculkan notifikasi error
+        elif self.var_paymentmethod.get()=="Select Pay Method":                                       # Membuat decision saat user klik tombol generate bill namun belum memilih jenis metode pembayaran
+            messagebox.showerror("Error","Please Add to Cart Room and Choose Method Payment",parent=self.root)       # Maka akan memunculkan notiifikasi error 
         else:
             text=self.textarea.get(20.0,(24.0+float(len(self.l))))                                              # membuat variabel text yang akan mengambil data pada baris 20.0 sampai 24.0+len(self.l)
             self.welcome()                                                                                      # Mengisi value pada self.welcome (data pemesan dan informasi hasil biaya)
@@ -1350,21 +1343,19 @@ class Bill_App2:                                                                
             self.textarea.insert(END,"\n ~ ADDITIONAL INFORMATION ~\n")
             self.textarea.insert(END,f"\n Check-In Date\t\t\t: {self.var_checkin.get()}")           # Memasukkan data Check-In Date ke text area
             if self.var_earlycheckin.get()=="Select Time":                                          # Decision saat belum memilih Early Check-In
-                messagebox.showerror("Error","Please Select Earliest Check-In Time")                # Muncul notifikasi error
-                self.new_window=Toplevel(self.root)                                             # Membuka new window dengan toplevel agar posisi paling atas
-                self.app=Bill_App2(self.new_window)                                             # Membukanya adalah window Bill_App2
+                messagebox.showerror("Error","Please Select Earliest Check-In Time",parent=self.root)                # Muncul notifikasi error
             else:
                 self.textarea.insert(END,f"\n Earliest Check-In Date\t\t\t: {self.var_earlycheckin.get()}")     # Memasukkan data Earlist Check-In ke text area
             
             if self.var_latecheckout.get()=="Select Time":                          # Decision saat belum memilih late check-out
-                messagebox.showerror("Error","Please Select Check-Out Time")        # Muncul notifikasi error
+                messagebox.showerror("Error","Please Select Check-Out Time",parent=self.root)        # Muncul notifikasi error
                 self.new_window=Toplevel(self.root)                                 # Membuka new window dengan toplevel agar posisi paling atas
                 self.app=Bill_App2(self.new_window)                                 # Membukanya adalah window Bill_App2
             else:
                 self.textarea.insert(END,f"\n Late Check-Out\t\t\t: {self.var_latecheckout.get()}")     # Memasukkan data Late Check-Out ke text area
             
             if self.var_meal.get()=="Select Meal":                          # Decision saat belum memilih Meal
-                messagebox.showerror("Error","Please Select Meal")          # Muncul notifikasi error  
+                messagebox.showerror("Error","Please Select Meal",parent=self.root)          # Muncul notifikasi error  
                 self.new_window=Toplevel(self.root)                         # Membuka new window dengan toplevel agar posisi paling atas
                 self.app=Bill_App2(self.new_window)                         # Membukanya adalah window Bill_App2
             else:
@@ -1415,23 +1406,35 @@ class Bill_App2:                                                                
             
     def save_bill(self):                                                    # Membuat fungsi save_bill dengan parameter self agar bill dapat disimpan user
         if self.var_roomtype.get()=="Select Type":                                      # Membuat decision bila user belum memilih jenis kamar
-            messagebox.showerror("Error","Please CLick Generate Bill")                  # Akan Memunculkan notifikasi error
-            self.new_window=Toplevel(self.root)                                         # Lalu akan membuka windows baru dengan toplevel
-            self.app=Bill_App2(self.new_window)                                         # windownya adalah Bill_App2
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Akan Memunculkan notifikasi error
+        elif self.var_paymentmethod.get()=="Select Pay Method":                                       # Membuat decision saat user klik tombol save bill namun belum memilih jenis metode pembayaran
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Maka akan memunculkan notiifikasi error 
+        elif self.var_earlycheckin.get()=="Select Time":                                              # Decision saat belum memilih Early Check-In
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Muncul notifikasi error
+        elif self.var_latecheckout.get()=="Select Time":                                              # Decision saat belum memilih late check-out
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)             # Muncul notifikasi error
+        elif self.var_meal.get()=="Select Meal":                                                    # Decision saat belum memilih Meal
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)             # Muncul notifikasi error
         else:
             op=messagebox.askyesno("Save Bill","Do you want to save the Bill?")         # Memunculkan messagebox untuk meminta user memilih ya atau tidak
             if op:                                                                                    # Membuat situasi jika user pilih ya save bill  
                 self.bill_data=self.textarea.get(1.0,END)                                             # Mendapatkan nilai dari baris 1 sampai akhir dalam bill
                 f1=open('bills/'+str(self.bill_no.get())+".txt",'w')                                  # Membuka file bills.txt dan memanggil nomor bill lalu menggunakan parameter mode 'w' untuk mereplace file dan diganti dengan yang baru ditulis
                 f1.write(self.bill_data)                                                                # Masukkan data pada file bills.txt
-                op=messagebox.showinfo("Saved",f"Bill No:{self.bill_no.get()} Saved Successfully!")     # Membuat notifikasi bila bill dengan nomor tertentu berhasil disimpan
+                op=messagebox.showinfo("Saved",f"Bill No:{self.bill_no.get()} Saved Successfully!",parent=self.root)     # Membuat notifikasi bila bill dengan nomor tertentu berhasil disimpan
                 f1.close()                                                                              # Menutup file bills.txt agar menjamin bahwa file akan tetap ditutup walaupun ada error sebelumnya
  
     def printbill(self):                                                                   # Membuat fungsi print bill dengan parameter self agar user dapat melakukan print bill
         if self.var_roomtype.get()=="Select Type":                              # Membuat decision jika user belum memilih jenis kamar
-            messagebox.showerror("Error","Please CLick Generate Bill")          # Memunculkan notifikasi error
-            self.new_window=Toplevel(self.root)                                 # Memunculkan windows baru dengan TopLevel
-            self.app=Bill_App2(self.new_window)                                 # Windownya adalah Bill_App2
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)          # Memunculkan notifikasi error
+        elif self.var_paymentmethod.get()=="Select Pay Method":                                       # Membuat decision saat user klik tombol save bill namun belum memilih jenis metode pembayaran
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Maka akan memunculkan notiifikasi error 
+        elif self.var_earlycheckin.get()=="Select Time":                                              # Decision saat belum memilih Early Check-In
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Muncul notifikasi error
+        elif self.var_latecheckout.get()=="Select Time":                                              # Decision saat belum memilih late check-out
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)             # Muncul notifikasi error
+        elif self.var_meal.get()=="Select Meal":                                         # Decision saat belum memilih Meal
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)          # Muncul notifikasi error
         else:
             q=self.textarea.get(1.0,"end-1c")                   # Mengambil data pada keseluruhan bill
             filename=tempfile.mktemp('.txt')                    # Menggunakan modul tempfile (TemporaryFile) untuk file sementara
@@ -1449,9 +1452,7 @@ class Bill_App2:                                                                
                 f1.close()                                          # Menutup file agar lebih aman
                 found="yes"                                         # menjadikan found menjadi bernilai yes
         if found=="no":                                         # jika tidak ditemukan nomor bill
-            messagebox.showerror("Error","Invalid Bill No.")    # maka akan muncul messagebox error
-            self.new_window=Toplevel(self.root)                 # membuka window baru dengan toplevel agar berada di posisi paling atas
-            self.app=Bill_App2(self.new_window)                 # windownya adalah Bill_App2
+            messagebox.showerror("Error","Invalid Bill No.",parent=self.root)    # maka akan muncul messagebox error
 
     def clear(self):                                    # Membuat fungsi clear bill dengan parameter self
         self.textarea.delete(1.0,END)                   # Menghapus semua value dalam frame bill
@@ -1938,9 +1939,7 @@ class Bill_App3:                                                                
         self.o=self.var_noofdays.get()*self.m                                   # membuat variabel self.o yang nantinya akan berisi nilai hasil dari harga kamar * jumlah kamar * lama menginap
         self.l.append(self.o)                                                   # membuat variabel self.l yang nantinya akan berisi nilai dari self.o dan penambahannya
         if self.var_roomtype.get()=="Select Type":                                      # Membuat decision bila user klik tombol Add to cart namun belum memilih tipe kamar
-            messagebox.showerror("Error","Please Select The Room Type Name")            # Maka akan muncul notiifikasi error dan meminta untuk memilih tipe kamar
-            self.new_window=Toplevel(self.root)                                         # Lalu akan memunculkan layar baru dengan Toplevel
-            self.app=Bill_App3(self.new_window)                                         # Membuka kembali window Bill_App3
+            messagebox.showerror("Error","Please Select The Room Type Name",parent=self.root)            # Maka akan muncul notiifikasi error dan meminta untuk memilih tipe kamar
         else:                                                                                   # Membuat decision lain (bila user memilih tipe kamar)
             self.textarea.insert(END,f"\n {self.var_roomtype.get()}\t\t{self.var_quantity.get()}\t          {self.var_noofdays.get()}\t\t        {self.o}")     # Menginput dan memunculkan data tipe kamar,jumlah,lama menginap, dan total harga kamar pada frame bill text area
             self.sub_total.set(str('Rp.%.2f'%(sum(self.l))))                                                                    # Menghitung dan memunculkan nilai subtotal setelah dilakukan perhitungan pada frame Bill Counting
@@ -1954,13 +1953,9 @@ class Bill_App3:                                                                
 
     def gen_bill(self):                                                                             # Membuat fungsi gen_bil untuk generate bill dengan parameter self
         if self.var_roomtype.get()=="Select Type":                                                  # Membuat decision saat user klik tombol generate bill namun belum memilih tipe kamar
-            messagebox.showerror("Error","Please Add to Cart Room and Choose Method Payment")       # Maka akan memunculkan notifikasi error
-            self.new_window=Toplevel(self.root)                                                     # Membuka kembali window Bill
-            self.app=Bill_App3(self.new_window)
-        if self.var_paymentmethod.get()=="Select Pay Method":                                       # Membuat decision saat user klik tombol generate bill namun belum memilih jenis metode pembayaran
-            messagebox.showerror("Error","Please Add to Cart Room and Choose Method Payment")       # Maka akan memunculkan notiifikasi error 
-            self.new_window=Toplevel(self.root)                                                     # Membuka kembali window Bill
-            self.app=Bill_App3(self.new_window)
+            messagebox.showerror("Error","Please Add to Cart Room and Choose Method Payment",parent=self.root)       # Maka akan memunculkan notifikasi error
+        elif self.var_paymentmethod.get()=="Select Pay Method":                                       # Membuat decision saat user klik tombol generate bill namun belum memilih jenis metode pembayaran
+            messagebox.showerror("Error","Please Add to Cart Room and Choose Method Payment",parent=self.root)       # Maka akan memunculkan notiifikasi error 
         else:
             text=self.textarea.get(20.0,(24.0+float(len(self.l))))                                              # membuat variabel text yang akan mengambil data pada baris 20.0 sampai 24.0+len(self.l)
             self.welcome()                                                                                      # Mengisi value pada self.welcome (data pemesan dan informasi hasil biaya)
@@ -1969,23 +1964,17 @@ class Bill_App3:                                                                
             self.textarea.insert(END,"\n ~ ADDITIONAL INFORMATION ~\n")
             self.textarea.insert(END,f"\n Check-In Date\t\t\t: {self.var_checkin.get()}")           # Memasukkan data Check-In Date ke text area
             if self.var_earlycheckin.get()=="Select Time":                                          # Decision saat belum memilih Early Check-In
-                messagebox.showerror("Error","Please Select Earliest Check-In Time")                # Muncul notifikasi error
-                self.new_window=Toplevel(self.root)                                             # Membuka new window dengan toplevel agar posisi paling atas
-                self.app=Bill_App3(self.new_window)                                             # Membukanya adalah window Bill_App3
+                messagebox.showerror("Error","Please Select Earliest Check-In Time",parent=self.root)                # Muncul notifikasi error
             else:
                 self.textarea.insert(END,f"\n Earliest Check-In Date\t\t\t: {self.var_earlycheckin.get()}")     # Memasukkan data Earlist Check-In ke text area
             
             if self.var_latecheckout.get()=="Select Time":                          # Decision saat belum memilih late check-out
-                messagebox.showerror("Error","Please Select Check-Out Time")        # Muncul notifikasi error
-                self.new_window=Toplevel(self.root)                                 # Membuka new window dengan toplevel agar posisi paling atas
-                self.app=Bill_App3(self.new_window)                                 # Membukanya adalah window Bill_App3
+                messagebox.showerror("Error","Please Select Check-Out Time",parent=self.root)        # Muncul notifikasi error
             else:
                 self.textarea.insert(END,f"\n Late Check-Out\t\t\t: {self.var_latecheckout.get()}")     # Memasukkan data Late Check-Out ke text area
             
             if self.var_meal.get()=="Select Meal":                          # Decision saat belum memilih Meal
-                messagebox.showerror("Error","Please Select Meal")          # Muncul notifikasi error  
-                self.new_window=Toplevel(self.root)                         # Membuka new window dengan toplevel agar posisi paling atas
-                self.app=Bill_App3(self.new_window)                         # Membukanya adalah window Bill_App3
+                messagebox.showerror("Error","Please Select Meal",parent=self.root)          # Muncul notifikasi error  
             else:
                 self.textarea.insert(END,f"\n Meal\t\t\t: {self.var_meal.get()}")   # Memasukkan data Meal ke text area
             
@@ -2034,23 +2023,35 @@ class Bill_App3:                                                                
             
     def save_bill(self):                                                    # Membuat fungsi save_bill dengan parameter self agar bill dapat disimpan user
         if self.var_roomtype.get()=="Select Type":                                      # Membuat decision bila user belum memilih jenis kamar
-            messagebox.showerror("Error","Please CLick Generate Bill")                  # Akan Memunculkan notifikasi error
-            self.new_window=Toplevel(self.root)                                         # Lalu akan membuka windows baru dengan toplevel
-            self.app=Bill_App3(self.new_window)                                         # windownya adalah Bill_App3
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Akan Memunculkan notifikasi error
+        elif self.var_paymentmethod.get()=="Select Pay Method":                                       # Membuat decision saat user klik tombol save bill namun belum memilih jenis metode pembayaran
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Maka akan memunculkan notiifikasi error 
+        elif self.var_earlycheckin.get()=="Select Time":                                              # Decision saat belum memilih Early Check-In
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Muncul notifikasi error
+        elif self.var_latecheckout.get()=="Select Time":                                              # Decision saat belum memilih late check-out
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)             # Muncul notifikasi error
+        elif self.var_meal.get()=="Select Meal":                                         # Decision saat belum memilih Meal
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)          # Muncul notifikasi error
         else:
             op=messagebox.askyesno("Save Bill","Do you want to save the Bill?")         # Memunculkan messagebox untuk meminta user memilih ya atau tidak
             if op:                                                                                    # Membuat situasi jika user pilih ya save bill  
                 self.bill_data=self.textarea.get(1.0,END)                                             # Mendapatkan nilai dari baris 1 sampai akhir dalam bill
                 f1=open('bills/'+str(self.bill_no.get())+".txt",'w')                                  # Membuka file bills.txt dan memanggil nomor bill lalu menggunakan parameter mode 'w' untuk mereplace file dan diganti dengan yang baru ditulis
                 f1.write(self.bill_data)                                                                # Masukkan data pada file bills.txt
-                op=messagebox.showinfo("Saved",f"Bill No:{self.bill_no.get()} Saved Successfully!")     # Membuat notifikasi bila bill dengan nomor tertentu berhasil disimpan
+                op=messagebox.showinfo("Saved",f"Bill No:{self.bill_no.get()} Saved Successfully!",parent=self.root)     # Membuat notifikasi bila bill dengan nomor tertentu berhasil disimpan
                 f1.close()                                                                              # Menutup file bills.txt agar menjamin bahwa file akan tetap ditutup walaupun ada error sebelumnya
  
     def printbill(self):                                                                   # Membuat fungsi print bill dengan parameter self agar user dapat melakukan print bill
         if self.var_roomtype.get()=="Select Type":                              # Membuat decision jika user belum memilih jenis kamar
-            messagebox.showerror("Error","Please CLick Generate Bill")          # Memunculkan notifikasi error
-            self.new_window=Toplevel(self.root)                                 # Memunculkan windows baru dengan TopLevel
-            self.app=Bill_App3(self.new_window)                                 # Windownya adalah Bill_App3
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)          # Memunculkan notifikasi error
+        elif self.var_paymentmethod.get()=="Select Pay Method":                                       # Membuat decision saat user klik tombol save bill namun belum memilih jenis metode pembayaran
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Maka akan memunculkan notiifikasi error 
+        elif self.var_earlycheckin.get()=="Select Time":                                              # Decision saat belum memilih Early Check-In
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Muncul notifikasi error
+        elif self.var_latecheckout.get()=="Select Time":                                              # Decision saat belum memilih late check-out
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)             # Muncul notifikasi error
+        elif self.var_meal.get()=="Select Meal":                                         # Decision saat belum memilih Meal
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)          # Muncul notifikasi error
         else:
             q=self.textarea.get(1.0,"end-1c")                   # Mengambil data pada keseluruhan bill
             filename=tempfile.mktemp('.txt')                    # Menggunakan modul tempfile (TemporaryFile) untuk file sementara
@@ -2068,9 +2069,7 @@ class Bill_App3:                                                                
                 f1.close()                                          # Menutup file agar lebih aman
                 found="yes"                                         # menjadikan found menjadi bernilai yes
         if found=="no":                                         # jika tidak ditemukan nomor bill
-            messagebox.showerror("Error","Invalid Bill No.")    # maka akan muncul messagebox error
-            self.new_window=Toplevel(self.root)                 # membuka window baru dengan toplevel agar berada di posisi paling atas
-            self.app=Bill_App3(self.new_window)                 # windownya adalah Bill_App3
+            messagebox.showerror("Error","Invalid Bill No.",parent=self.root)    # maka akan muncul messagebox error
 
     def clear(self):                                    # Membuat fungsi clear bill dengan parameter self
         self.textarea.delete(1.0,END)                   # Menghapus semua value dalam frame bill
@@ -2549,9 +2548,7 @@ class Bill_App4:                                                                
         self.o=self.var_noofdays.get()*self.m                                   # membuat variabel self.o yang nantinya akan berisi nilai hasil dari harga kamar * jumlah kamar * lama menginap
         self.l.append(self.o)                                                   # membuat variabel self.l yang nantinya akan berisi nilai dari self.o dan penambahannya
         if self.var_roomtype.get()=="Select Type":                                      # Membuat decision bila user klik tombol Add to cart namun belum memilih tipe kamar
-            messagebox.showerror("Error","Please Select The Room Type Name")            # Maka akan muncul notiifikasi error dan meminta untuk memilih tipe kamar
-            self.new_window=Toplevel(self.root)                                         # Lalu akan memunculkan layar baru dengan Toplevel
-            self.app=Bill_App4(self.new_window)                                         # Membuka kembali window Bill_App4
+            messagebox.showerror("Error","Please Select The Room Type Name",parent=self.root)            # Maka akan muncul notiifikasi error dan meminta untuk memilih tipe kamar
         else:                                                                                   # Membuat decision lain (bila user memilih tipe kamar)
             self.textarea.insert(END,f"\n {self.var_roomtype.get()}\t\t{self.var_quantity.get()}\t          {self.var_noofdays.get()}\t\t        {self.o}")     # Menginput dan memunculkan data tipe kamar,jumlah,lama menginap, dan total harga kamar pada frame bill text area
             self.sub_total.set(str('Rp.%.2f'%(sum(self.l))))                                                                    # Menghitung dan memunculkan nilai subtotal setelah dilakukan perhitungan pada frame Bill Counting
@@ -2565,13 +2562,9 @@ class Bill_App4:                                                                
 
     def gen_bill(self):                                                                             # Membuat fungsi gen_bil untuk generate bill dengan parameter self
         if self.var_roomtype.get()=="Select Type":                                                  # Membuat decision saat user klik tombol generate bill namun belum memilih tipe kamar
-            messagebox.showerror("Error","Please Add to Cart Room and Choose Method Payment")       # Maka akan memunculkan notifikasi error
-            self.new_window=Toplevel(self.root)                                                     # Membuka kembali window Bill
-            self.app=Bill_App4(self.new_window)
-        if self.var_paymentmethod.get()=="Select Pay Method":                                       # Membuat decision saat user klik tombol generate bill namun belum memilih jenis metode pembayaran
-            messagebox.showerror("Error","Please Add to Cart Room and Choose Method Payment")       # Maka akan memunculkan notiifikasi error 
-            self.new_window=Toplevel(self.root)                                                     # Membuka kembali window Bill
-            self.app=Bill_App4(self.new_window)
+            messagebox.showerror("Error","Please Add to Cart Room and Choose Method Payment",parent=self.root)       # Maka akan memunculkan notifikasi error
+        elif self.var_paymentmethod.get()=="Select Pay Method":                                       # Membuat decision saat user klik tombol generate bill namun belum memilih jenis metode pembayaran
+            messagebox.showerror("Error","Please Add to Cart Room and Choose Method Payment",parent=self.root)       # Maka akan memunculkan notiifikasi error 
         else:
             text=self.textarea.get(20.0,(24.0+float(len(self.l))))                                              # membuat variabel text yang akan mengambil data pada baris 20.0 sampai 24.0+len(self.l)
             self.welcome()                                                                                      # Mengisi value pada self.welcome (data pemesan dan informasi hasil biaya)
@@ -2580,23 +2573,17 @@ class Bill_App4:                                                                
             self.textarea.insert(END,"\n ~ ADDITIONAL INFORMATION ~\n")
             self.textarea.insert(END,f"\n Check-In Date\t\t\t: {self.var_checkin.get()}")           # Memasukkan data Check-In Date ke text area
             if self.var_earlycheckin.get()=="Select Time":                                          # Decision saat belum memilih Early Check-In
-                messagebox.showerror("Error","Please Select Earliest Check-In Time")                # Muncul notifikasi error
-                self.new_window=Toplevel(self.root)                                             # Membuka new window dengan toplevel agar posisi paling atas
-                self.app=Bill_App4(self.new_window)                                             # Membukanya adalah window Bill_App4
+                messagebox.showerror("Error","Please Select Earliest Check-In Time",parent=self.root)                # Muncul notifikasi error
             else:
                 self.textarea.insert(END,f"\n Earliest Check-In Date\t\t\t: {self.var_earlycheckin.get()}")     # Memasukkan data Earlist Check-In ke text area
             
             if self.var_latecheckout.get()=="Select Time":                          # Decision saat belum memilih late check-out
-                messagebox.showerror("Error","Please Select Check-Out Time")        # Muncul notifikasi error
-                self.new_window=Toplevel(self.root)                                 # Membuka new window dengan toplevel agar posisi paling atas
-                self.app=Bill_App4(self.new_window)                                 # Membukanya adalah window Bill_App4
+                messagebox.showerror("Error","Please Select Check-Out Time",parent=self.root)        # Muncul notifikasi error
             else:
                 self.textarea.insert(END,f"\n Late Check-Out\t\t\t: {self.var_latecheckout.get()}")     # Memasukkan data Late Check-Out ke text area
             
             if self.var_meal.get()=="Select Meal":                          # Decision saat belum memilih Meal
-                messagebox.showerror("Error","Please Select Meal")          # Muncul notifikasi error  
-                self.new_window=Toplevel(self.root)                         # Membuka new window dengan toplevel agar posisi paling atas
-                self.app=Bill_App4(self.new_window)                         # Membukanya adalah window Bill_App4
+                messagebox.showerror("Error","Please Select Meal",parent=self.root)          # Muncul notifikasi error  
             else:
                 self.textarea.insert(END,f"\n Meal\t\t\t: {self.var_meal.get()}")   # Memasukkan data Meal ke text area
             
@@ -2645,23 +2632,35 @@ class Bill_App4:                                                                
             
     def save_bill(self):                                                    # Membuat fungsi save_bill dengan parameter self agar bill dapat disimpan user
         if self.var_roomtype.get()=="Select Type":                                      # Membuat decision bila user belum memilih jenis kamar
-            messagebox.showerror("Error","Please CLick Generate Bill")                  # Akan Memunculkan notifikasi error
-            self.new_window=Toplevel(self.root)                                         # Lalu akan membuka windows baru dengan toplevel
-            self.app=Bill_App4(self.new_window)                                         # windownya adalah Bill_App4
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Akan Memunculkan notifikasi error
+        elif self.var_paymentmethod.get()=="Select Pay Method":                                       # Membuat decision saat user klik tombol save bill namun belum memilih jenis metode pembayaran
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Maka akan memunculkan notiifikasi error 
+        elif self.var_earlycheckin.get()=="Select Time":                                              # Decision saat belum memilih Early Check-In
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Muncul notifikasi error
+        elif self.var_latecheckout.get()=="Select Time":                                              # Decision saat belum memilih late check-out
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)             # Muncul notifikasi error
+        elif self.var_meal.get()=="Select Meal":                                         # Decision saat belum memilih Meal
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)          # Muncul notifikasi error
         else:
             op=messagebox.askyesno("Save Bill","Do you want to save the Bill?")         # Memunculkan messagebox untuk meminta user memilih ya atau tidak
             if op:                                                                                    # Membuat situasi jika user pilih ya save bill  
                 self.bill_data=self.textarea.get(1.0,END)                                             # Mendapatkan nilai dari baris 1 sampai akhir dalam bill
                 f1=open('bills/'+str(self.bill_no.get())+".txt",'w')                                  # Membuka file bills.txt dan memanggil nomor bill lalu menggunakan parameter mode 'w' untuk mereplace file dan diganti dengan yang baru ditulis
                 f1.write(self.bill_data)                                                                # Masukkan data pada file bills.txt
-                op=messagebox.showinfo("Saved",f"Bill No:{self.bill_no.get()} Saved Successfully!")     # Membuat notifikasi bila bill dengan nomor tertentu berhasil disimpan
+                op=messagebox.showinfo("Saved",f"Bill No:{self.bill_no.get()} Saved Successfully!",parent=self.root)     # Membuat notifikasi bila bill dengan nomor tertentu berhasil disimpan
                 f1.close()                                                                              # Menutup file bills.txt agar menjamin bahwa file akan tetap ditutup walaupun ada error sebelumnya
  
     def printbill(self):                                                                   # Membuat fungsi print bill dengan parameter self agar user dapat melakukan print bill
         if self.var_roomtype.get()=="Select Type":                              # Membuat decision jika user belum memilih jenis kamar
-            messagebox.showerror("Error","Please CLick Generate Bill")          # Memunculkan notifikasi error
-            self.new_window=Toplevel(self.root)                                 # Memunculkan windows baru dengan TopLevel
-            self.app=Bill_App4(self.new_window)                                 # Windownya adalah Bill_App4
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)          # Memunculkan notifikasi error
+        elif self.var_paymentmethod.get()=="Select Pay Method":                                       # Membuat decision saat user klik tombol save bill namun belum memilih jenis metode pembayaran
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Maka akan memunculkan notiifikasi error 
+        elif self.var_earlycheckin.get()=="Select Time":                                              # Decision saat belum memilih Early Check-In
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Muncul notifikasi error
+        elif self.var_latecheckout.get()=="Select Time":                                              # Decision saat belum memilih late check-out
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)             # Muncul notifikasi error
+        elif self.var_meal.get()=="Select Meal":                                         # Decision saat belum memilih Meal
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)          # Muncul notifikasi error           
         else:
             q=self.textarea.get(1.0,"end-1c")                   # Mengambil data pada keseluruhan bill
             filename=tempfile.mktemp('.txt')                    # Menggunakan modul tempfile (TemporaryFile) untuk file sementara
@@ -2679,9 +2678,7 @@ class Bill_App4:                                                                
                 f1.close()                                          # Menutup file agar lebih aman
                 found="yes"                                         # menjadikan found menjadi bernilai yes
         if found=="no":                                         # jika tidak ditemukan nomor bill
-            messagebox.showerror("Error","Invalid Bill No.")    # maka akan muncul messagebox error
-            self.new_window=Toplevel(self.root)                 # membuka window baru dengan toplevel agar berada di posisi paling atas
-            self.app=Bill_App4(self.new_window)                 # windownya adalah Bill_App4
+            messagebox.showerror("Error","Invalid Bill No.",parent=self.root)    # maka akan muncul messagebox error
 
     def clear(self):                                    # Membuat fungsi clear bill dengan parameter self
         self.textarea.delete(1.0,END)                   # Menghapus semua value dalam frame bill
@@ -3169,9 +3166,7 @@ class Bill_App5:                                                                
         self.o=self.var_noofdays.get()*self.m                                   # membuat variabel self.o yang nantinya akan berisi nilai hasil dari harga kamar * jumlah kamar * lama menginap
         self.l.append(self.o)                                                   # membuat variabel self.l yang nantinya akan berisi nilai dari self.o dan penambahannya
         if self.var_roomtype.get()=="Select Type":                                      # Membuat decision bila user klik tombol Add to cart namun belum memilih tipe kamar
-            messagebox.showerror("Error","Please Select The Room Type Name")            # Maka akan muncul notiifikasi error dan meminta untuk memilih tipe kamar
-            self.new_window=Toplevel(self.root)                                         # Lalu akan memunculkan layar baru dengan Toplevel
-            self.app=Bill_App5(self.new_window)                                         # Membuka kembali window Bill_App5
+            messagebox.showerror("Error","Please Select The Room Type Name",parent=self.root)            # Maka akan muncul notiifikasi error dan meminta untuk memilih tipe kamar
         else:                                                                                   # Membuat decision lain (bila user memilih tipe kamar)
             self.textarea.insert(END,f"\n {self.var_roomtype.get()}\t\t{self.var_quantity.get()}\t          {self.var_noofdays.get()}\t\t        {self.o}")     # Menginput dan memunculkan data tipe kamar,jumlah,lama menginap, dan total harga kamar pada frame bill text area
             self.sub_total.set(str('Rp.%.2f'%(sum(self.l))))                                                                    # Menghitung dan memunculkan nilai subtotal setelah dilakukan perhitungan pada frame Bill Counting
@@ -3185,13 +3180,9 @@ class Bill_App5:                                                                
 
     def gen_bill(self):                                                                             # Membuat fungsi gen_bil untuk generate bill dengan parameter self
         if self.var_roomtype.get()=="Select Type":                                                  # Membuat decision saat user klik tombol generate bill namun belum memilih tipe kamar
-            messagebox.showerror("Error","Please Add to Cart Room and Choose Method Payment")       # Maka akan memunculkan notifikasi error
-            self.new_window=Toplevel(self.root)                                                     # Membuka kembali window Bill
-            self.app=Bill_App5(self.new_window)
-        if self.var_paymentmethod.get()=="Select Pay Method":                                       # Membuat decision saat user klik tombol generate bill namun belum memilih jenis metode pembayaran
-            messagebox.showerror("Error","Please Add to Cart Room and Choose Method Payment")       # Maka akan memunculkan notiifikasi error 
-            self.new_window=Toplevel(self.root)                                                     # Membuka kembali window Bill
-            self.app=Bill_App5(self.new_window)
+            messagebox.showerror("Error","Please Add to Cart Room and Choose Method Payment",parent=self.root)       # Maka akan memunculkan notifikasi error
+        elif self.var_paymentmethod.get()=="Select Pay Method":                                       # Membuat decision saat user klik tombol generate bill namun belum memilih jenis metode pembayaran
+            messagebox.showerror("Error","Please Add to Cart Room and Choose Method Payment",parent=self.root)       # Maka akan memunculkan notiifikasi error 
         else:
             text=self.textarea.get(20.0,(24.0+float(len(self.l))))                                              # membuat variabel text yang akan mengambil data pada baris 20.0 sampai 24.0+len(self.l)
             self.welcome()                                                                                      # Mengisi value pada self.welcome (data pemesan dan informasi hasil biaya)
@@ -3200,23 +3191,17 @@ class Bill_App5:                                                                
             self.textarea.insert(END,"\n ~ ADDITIONAL INFORMATION ~\n")
             self.textarea.insert(END,f"\n Check-In Date\t\t\t: {self.var_checkin.get()}")           # Memasukkan data Check-In Date ke text area
             if self.var_earlycheckin.get()=="Select Time":                                          # Decision saat belum memilih Early Check-In
-                messagebox.showerror("Error","Please Select Earliest Check-In Time")                # Muncul notifikasi error
-                self.new_window=Toplevel(self.root)                                             # Membuka new window dengan toplevel agar posisi paling atas
-                self.app=Bill_App5(self.new_window)                                             # Membukanya adalah window Bill_App5
+                messagebox.showerror("Error","Please Select Earliest Check-In Time",parent=self.root)                # Muncul notifikasi error
             else:
                 self.textarea.insert(END,f"\n Earliest Check-In Date\t\t\t: {self.var_earlycheckin.get()}")     # Memasukkan data Earlist Check-In ke text area
             
             if self.var_latecheckout.get()=="Select Time":                          # Decision saat belum memilih late check-out
-                messagebox.showerror("Error","Please Select Check-Out Time")        # Muncul notifikasi error
-                self.new_window=Toplevel(self.root)                                 # Membuka new window dengan toplevel agar posisi paling atas
-                self.app=Bill_App5(self.new_window)                                 # Membukanya adalah window Bill_App5
+                messagebox.showerror("Error","Please Select Check-Out Time",parent=self.root)        # Muncul notifikasi error
             else:
                 self.textarea.insert(END,f"\n Late Check-Out\t\t\t: {self.var_latecheckout.get()}")     # Memasukkan data Late Check-Out ke text area
             
             if self.var_meal.get()=="Select Meal":                          # Decision saat belum memilih Meal
-                messagebox.showerror("Error","Please Select Meal")          # Muncul notifikasi error  
-                self.new_window=Toplevel(self.root)                         # Membuka new window dengan toplevel agar posisi paling atas
-                self.app=Bill_App5(self.new_window)                         # Membukanya adalah window Bill_App5
+                messagebox.showerror("Error","Please Select Meal",parent=self.root)          # Muncul notifikasi error  
             else:
                 self.textarea.insert(END,f"\n Meal\t\t\t: {self.var_meal.get()}")   # Memasukkan data Meal ke text area
             
@@ -3265,23 +3250,35 @@ class Bill_App5:                                                                
             
     def save_bill(self):                                                    # Membuat fungsi save_bill dengan parameter self agar bill dapat disimpan user
         if self.var_roomtype.get()=="Select Type":                                      # Membuat decision bila user belum memilih jenis kamar
-            messagebox.showerror("Error","Please CLick Generate Bill")                  # Akan Memunculkan notifikasi error
-            self.new_window=Toplevel(self.root)                                         # Lalu akan membuka windows baru dengan toplevel
-            self.app=Bill_App5(self.new_window)                                         # windownya adalah Bill_App5
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Akan Memunculkan notifikasi error
+        elif self.var_paymentmethod.get()=="Select Pay Method":                                       # Membuat decision saat user klik tombol save bill namun belum memilih jenis metode pembayaran
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Maka akan memunculkan notiifikasi error 
+        elif self.var_earlycheckin.get()=="Select Time":                                              # Decision saat belum memilih Early Check-In
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Muncul notifikasi error
+        elif self.var_latecheckout.get()=="Select Time":                                              # Decision saat belum memilih late check-out
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)             # Muncul notifikasi error
+        elif self.var_meal.get()=="Select Meal":                                                    # Decision saat belum memilih Meal
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)             # Muncul notifikasi error
         else:
             op=messagebox.askyesno("Save Bill","Do you want to save the Bill?")         # Memunculkan messagebox untuk meminta user memilih ya atau tidak
             if op:                                                                                    # Membuat situasi jika user pilih ya save bill  
                 self.bill_data=self.textarea.get(1.0,END)                                             # Mendapatkan nilai dari baris 1 sampai akhir dalam bill
                 f1=open('bills/'+str(self.bill_no.get())+".txt",'w')                                  # Membuka file bills.txt dan memanggil nomor bill lalu menggunakan parameter mode 'w' untuk mereplace file dan diganti dengan yang baru ditulis
                 f1.write(self.bill_data)                                                                # Masukkan data pada file bills.txt
-                op=messagebox.showinfo("Saved",f"Bill No:{self.bill_no.get()} Saved Successfully!")     # Membuat notifikasi bila bill dengan nomor tertentu berhasil disimpan
+                op=messagebox.showinfo("Saved",f"Bill No:{self.bill_no.get()} Saved Successfully!",parent=self.root)     # Membuat notifikasi bila bill dengan nomor tertentu berhasil disimpan
                 f1.close()                                                                              # Menutup file bills.txt agar menjamin bahwa file akan tetap ditutup walaupun ada error sebelumnya
  
     def printbill(self):                                                                   # Membuat fungsi print bill dengan parameter self agar user dapat melakukan print bill
         if self.var_roomtype.get()=="Select Type":                              # Membuat decision jika user belum memilih jenis kamar
-            messagebox.showerror("Error","Please CLick Generate Bill")          # Memunculkan notifikasi error
-            self.new_window=Toplevel(self.root)                                 # Memunculkan windows baru dengan TopLevel
-            self.app=Bill_App5(self.new_window)                                 # Windownya adalah Bill_App5
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)          # Memunculkan notifikasi error
+        elif self.var_paymentmethod.get()=="Select Pay Method":                                       # Membuat decision saat user klik tombol save bill namun belum memilih jenis metode pembayaran
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Maka akan memunculkan notiifikasi error 
+        elif self.var_earlycheckin.get()=="Select Time":                                              # Decision saat belum memilih Early Check-In
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)               # Muncul notifikasi error
+        elif self.var_latecheckout.get()=="Select Time":                                              # Decision saat belum memilih late check-out
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)             # Muncul notifikasi error
+        elif self.var_meal.get()=="Select Meal":                                         # Decision saat belum memilih Meal
+            messagebox.showerror("Error","Please CLick Generate Bill",parent=self.root)          # Muncul notifikasi error
         else:
             q=self.textarea.get(1.0,"end-1c")                   # Mengambil data pada keseluruhan bill
             filename=tempfile.mktemp('.txt')                    # Menggunakan modul tempfile (TemporaryFile) untuk file sementara
@@ -3299,9 +3296,7 @@ class Bill_App5:                                                                
                 f1.close()                                          # Menutup file agar lebih aman
                 found="yes"                                         # menjadikan found menjadi bernilai yes
         if found=="no":                                         # jika tidak ditemukan nomor bill
-            messagebox.showerror("Error","Invalid Bill No.")    # maka akan muncul messagebox error
-            self.new_window=Toplevel(self.root)                 # membuka window baru dengan toplevel agar berada di posisi paling atas
-            self.app=Bill_App5(self.new_window)                 # windownya adalah Bill_App5
+            messagebox.showerror("Error","Invalid Bill No.",parent=self.root)    # maka akan muncul messagebox error
 
     def clear(self):                                    # Membuat fungsi clear bill dengan parameter self
         self.textarea.delete(1.0,END)                   # Menghapus semua value dalam frame bill
